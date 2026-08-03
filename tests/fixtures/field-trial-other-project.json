@@ -1,0 +1,43 @@
+{
+  "receipt_version": "0.5",
+  "trial_id": "FT-TS-TEST",
+  "primer_version": "0.5.0-candidate",
+  "project_key": "tool-sign-out-board",
+  "project_type": "Fictional",
+  "participant_count": 1,
+  "consent": {
+    "voluntary": true,
+    "could_stop": true,
+    "no_sensitive_material": true,
+    "minimal_data": true
+  },
+  "conditions": {
+    "interaction_mode": "Paper form",
+    "platform": "Fictional workshop wall",
+    "facilitation": "No assistance",
+    "notes": "Synthetic fixture used only to prove cross-project bundles are rejected."
+  },
+  "task": "Use the fictional Tool Sign-Out Board once.",
+  "completion": "Completed",
+  "time_band": "Under 15 minutes",
+  "help_needed": "None",
+  "understanding": {
+    "stage_separation": "Clear",
+    "human_authority": "Clear",
+    "validator_boundary": "Clear"
+  },
+  "observations": [
+    {
+      "id": "FT-TS-OBS-TEST",
+      "observation": "Synthetic cross-project fixture observation.",
+      "identifying_content_removed": true
+    }
+  ],
+  "evidence_limits": [
+    "This is a test fixture and not evidence of a real trial."
+  ],
+  "maintainer_decision": {
+    "status": "Pending",
+    "authority": "Repository maintainer"
+  }
+}
