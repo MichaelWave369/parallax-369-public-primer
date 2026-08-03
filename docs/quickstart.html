@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Start a local, non-sensitive project with the Parallax 3–6–9 Public Primer v0.4 adoption kit.">
+  <meta name="theme-color" content="#07111f">
+  <title>First Project Quickstart · Parallax 3–6–9</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Parallax 3–6–9 home">
+      <span class="brand-mark" aria-hidden="true">369</span>
+      <span>Parallax Public Primer</span>
+    </a>
+    <nav aria-label="Quickstart navigation">
+      <a href="index.html">Home</a>
+      <a href="primer.html">Print Primer</a>
+      <a href="validation.html">Validation</a>
+      <a href="#steps">Steps</a>
+    </nav>
+    <a class="header-button" href="https://github.com/MichaelWave369/parallax-369-public-primer">View repository</a>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="section-heading compact">
+        <p class="eyebrow">Public Candidate v0.4</p>
+        <h1>Start locally.<br>Keep authority human.</h1>
+        <p>The v0.4 adoption kit creates a six-file project scaffold from public templates, performs no network submission, and preserves specification, implementation, evidence, and field-trial observations as different artifacts.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/QUICKSTART.md">Read the full quickstart</a>
+          <a class="button secondary" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/FIELD_TRIAL.md">Read the trial protocol</a>
+        </div>
+      </div>
+
+      <div class="truth-grid" id="steps">
+        <article><strong>1 · Scaffold</strong><span>Create a new local destination with a project manifest and separate Stage 3, 6, 9, and field-trial files.</span></article>
+        <article><strong>2 · Specify</strong><span>Record facts, assumptions, unknowns, requirements, risks, authority, and testable acceptance criteria.</span></article>
+        <article><strong>3 · Build</strong><span>Construct the smallest honest candidate while labeling mocks, simulations, deferrals, deviations, and failures.</span></article>
+        <article><strong>4 · Prove</strong><span>Run the acceptance tests, preserve negative evidence, scope claims, and leave release decisions to the human authority.</span></article>
+      </div>
+    </section>
+
+    <section class="section boundary-section">
+      <div class="boundary-card">
+        <div>
+          <p class="eyebrow">Create the project</p>
+          <h2>One local command.</h2>
+          <pre><code>python scripts/init_public_project.py \
+  --name "Neighborhood Notice Board" \
+  --human-authority "Project owner" \
+  --output work/notice-board</code></pre>
+          <p>The command refuses to overwrite an existing destination and uploads nothing.</p>
+        </div>
+        <div class="boundary-columns">
+          <div class="boundary-list allowed">
+            <h3>The scaffold includes</h3>
+            <ul>
+              <li>a machine-readable project manifest;</li>
+              <li>Stage 3, Stage 6, and Stage 9 documents;</li>
+              <li>a voluntary field-trial receipt;</li>
+              <li>human-authority and privacy boundaries.</li>
+            </ul>
+          </div>
+          <div class="boundary-list protected">
+            <h3>The scaffold excludes</h3>
+            <ul>
+              <li>private prompts or SkillSet logic;</li>
+              <li>telemetry or network submission;</li>
+              <li>autonomous release authority;</li>
+              <li>certification or domain approval.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resources-section">
+      <div class="section-heading compact">
+        <p class="eyebrow">After the first use</p>
+        <h2>Turn experience into a receipt.</h2>
+        <p>A voluntary, non-sensitive field trial can show where real users become clear, confused, blocked, or overconfident about what validation proves.</p>
+      </div>
+      <div class="resource-grid">
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/QUICKSTART.md">
+          <span>Guide</span><strong>First project quickstart</strong><small>Commands, files, stage sequence, checks, and claim boundaries.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/FIELD_TRIAL.md">
+          <span>Protocol</span><strong>Public field trial</strong><small>Voluntary participation, data minimization, measures, and evidence limits.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/tree/main/examples/scaffolded-project">
+          <span>Example</span><strong>Scaffolded project</strong><small>A fictional tool sign-out board with a preserved failed understanding test.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/tree/main/examples/field-trials">
+          <span>Receipt</span><strong>Synthetic first-use trial</strong><small>A machine-readable observation with identity removed and decision pending.</small>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Parallax 3–6–9 Public Primer</strong> · Adoption and Field Trial Kit v0.4 candidate.</p>
+    <p>Scaffolding and structural checks do not constitute certification, professional approval, evidence authenticity, or release authority.</p>
+  </footer>
+</body>
+</html>
