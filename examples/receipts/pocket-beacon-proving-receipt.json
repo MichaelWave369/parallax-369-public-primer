@@ -1,0 +1,51 @@
+{
+  "schema_file": "schemas/public-receipt.schema.json",
+  "schema_version": "0.3",
+  "receipt_type": "proving-ground",
+  "receipt_id": "PB-PG-001",
+  "project": "Pocket Beacon",
+  "stage": "9",
+  "status": "failed",
+  "human_authority": {
+    "role": "Workshop coordinator",
+    "decision_status": "pending",
+    "decision": "Return disposition remains pending human review."
+  },
+  "scope": "Synthetic evaluation of the Pocket Beacon static candidate under the conditions documented in its public walkthrough.",
+  "evidence": [
+    {
+      "id": "EV-PB-01",
+      "kind": "test",
+      "observation": "The page displayed all three declared workshop statuses without a network connection.",
+      "result": "pass",
+      "source": "Synthetic Pocket Beacon walkthrough, PG-01"
+    },
+    {
+      "id": "EV-PB-02",
+      "kind": "test",
+      "observation": "The selected status did not persist after the page was reloaded.",
+      "result": "fail",
+      "source": "Synthetic Pocket Beacon walkthrough, PG-04"
+    }
+  ],
+  "claims": [
+    {
+      "text": "The tested candidate can display three statuses offline in the recorded environment.",
+      "classification": "verified-in-scope",
+      "evidence_ids": ["EV-PB-01"],
+      "scope_limit": "Applies only to the synthetic candidate and recorded browser conditions."
+    },
+    {
+      "text": "The tested candidate retains the selected status after reload.",
+      "classification": "unsupported",
+      "evidence_ids": ["EV-PB-02"],
+      "scope_limit": "The recorded test failed; no persistence claim is authorized."
+    }
+  ],
+  "limitations": [
+    "This is a synthetic educational receipt, not a field result.",
+    "No independent reproduction was performed.",
+    "Schema validity does not authenticate the observations."
+  ],
+  "created_at": "2026-08-02T22:57:00-07:00"
+}
