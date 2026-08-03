@@ -57,9 +57,7 @@ The validation workflow may return a pass or failure and may be configured by a 
 
 ### Roadmap decision basis
 
-No open public feedback or usability issue was present when v0.4 planning began. Rather than claim that usage evidence existed, maintainers opened [roadmap proposal issue #4](https://github.com/MichaelWave369/parallax-369-public-primer/issues/4) to document the next candidate direction.
-
-The selected purpose is to make a first public use easier and create a governed path for gathering actual future observations.
+No open public feedback or usability issue was present when v0.4 planning began. Maintainers documented the candidate direction in [roadmap proposal issue #4](https://github.com/MichaelWave369/parallax-369-public-primer/issues/4).
 
 - [x] Add a concise first-project quickstart.
 - [x] Add a standard-library-only local project scaffolder.
@@ -90,11 +88,47 @@ The selected purpose is to make a first public use easier and create a governed 
 
 The included field trial is synthetic. It proves only that the public receipt format and validation path can preserve an observation, an evidence limitation, and a pending human decision. It is not real user research and does not complete the ongoing v0.2 feedback item.
 
-## Post-v0.4 direction
+## v0.5 — Evidence review and synthesis kit
 
-The next roadmap revision should be informed by actual public use, submitted feedback, accessibility evidence, or a separately documented maintainer decision. The repository should not create a v0.5 solely because v0.4 exists.
+### Roadmap decision basis
 
-Candidate directions may include clarification based on real field-trial reports, accessibility remediations, packaging improvements, or schema migrations. Each remains subject to the public-release boundary and human approval.
+No open public field-trial, feedback, or accessibility issue was present when v0.5 planning began. The maintainer explicitly requested the next version, and [roadmap proposal issue #7](https://github.com/MichaelWave369/parallax-369-public-primer/issues/7) records the selected need: review multiple same-project receipts without flattening conditions, failures, or disagreement.
+
+- [x] Add a public evidence-review protocol.
+- [x] Add an evidence-review receipt template.
+- [x] Add a review-bundle manifest and schema.
+- [x] Add a standard-library-only review-bundle validator.
+- [x] Add a local review-packet generator that produces no score or automatic decision.
+- [x] Add two synthetic same-project trials with different conditions and outcomes.
+- [x] Add a synthetic review bundle and packet preserving agreement, divergence, observations, and limits.
+- [x] Add negative fixtures for cross-project bundling and missing source files.
+- [x] Extend the read-only validation suite and static site.
+
+### v0.5 receipts
+
+- [`EVIDENCE_REVIEW.md`](EVIDENCE_REVIEW.md)
+- [`templates/evidence-review-receipt.md`](templates/evidence-review-receipt.md)
+- [`schemas/review-bundle.schema.json`](schemas/review-bundle.schema.json)
+- [`scripts/validate_review_bundles.py`](scripts/validate_review_bundles.py)
+- [`scripts/generate_review_packet.py`](scripts/generate_review_packet.py)
+- [`examples/field-trials/pocket-beacon-first-use.json`](examples/field-trials/pocket-beacon-first-use.json)
+- [`examples/field-trials/pocket-beacon-keyboard-only.json`](examples/field-trials/pocket-beacon-keyboard-only.json)
+- [`examples/review-bundles/pocket-beacon-review.json`](examples/review-bundles/pocket-beacon-review.json)
+- [`examples/review-packets/pocket-beacon-review.md`](examples/review-packets/pocket-beacon-review.md)
+- [`docs/review.html`](docs/review.html)
+- [`releases/v0.5-public-release-review.md`](releases/v0.5-public-release-review.md)
+
+### v0.5 synthesis boundary
+
+A review packet may inventory declared outcomes and expose agreement or divergence. It may not authenticate receipts, calculate a usability score, average incompatible conditions, resolve disagreement by majority vote, recommend release, certify a project, or authorize a roadmap change.
+
+All included review receipts and packets remain synthetic and do not complete the ongoing public-feedback item.
+
+## Post-v0.5 direction
+
+The next roadmap revision should be informed by actual public use, submitted feedback, accessibility evidence, a discovered maintenance need, or a separately documented maintainer decision. The repository should not create a v0.6 solely because v0.5 exists.
+
+Candidate directions may include remediations based on real reports, packaging improvements, explicit migrations, or long-term maintenance hardening. Each remains subject to the public-release boundary and human approval.
 
 ## Deferred
 
@@ -103,9 +137,9 @@ The following are intentionally not promised by this public repository:
 - release of private Parallax SkillSet instructions;
 - internal agent or swarm orchestration;
 - private canon, validators, research, schemas, or project records;
-- telemetry or automatic upload of generated projects or trial receipts;
-- automated Parallax certification;
-- autonomous publication authority;
+- telemetry or automatic upload of generated projects, trial receipts, or review packets;
+- automated scoring, ranking, certification, or majority-vote truth claims;
+- autonomous publication or roadmap authority;
 - claims that the method guarantees scientific, legal, engineering, financial, medical, accessibility, consent, or safety validity.
 
 ## Roadmap governance
