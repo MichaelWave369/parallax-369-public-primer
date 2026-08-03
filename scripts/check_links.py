@@ -9,7 +9,6 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-
 REPO_ROOT = Path(__file__).resolve().parents[1]
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 EXTERNAL_SCHEMES = {"http", "https", "mailto", "tel", "data", "javascript"}
@@ -34,11 +33,7 @@ class LinkParser(HTMLParser):
 
 
 def discover_files(suffix: str) -> list[Path]:
-    return sorted(
-        path
-        for path in REPO_ROOT.rglob(f"*{suffix}")
-        if not any(part in SKIP_DIRS for part in path.parts)
-    )
+    return sorted(path for path in REPO_ROOT.rglob(f"*{suffix}") if not any(part in SKIP_DIRS for part in path.parts))
 
 
 def markdown_targets(path: Path) -> list[str]:
@@ -74,7 +69,6 @@ def resolve_target(source: Path, raw_target: str) -> tuple[Path | None, str]:
         return None, ""
     if not parsed.path and not parsed.fragment:
         return None, ""
-
     decoded_path = unquote(parsed.path)
     if decoded_path.startswith("/"):
         candidate = REPO_ROOT / "docs" / decoded_path.lstrip("/")
@@ -82,19 +76,16 @@ def resolve_target(source: Path, raw_target: str) -> tuple[Path | None, str]:
         candidate = source.parent / decoded_path
     else:
         candidate = source
-
     candidate = candidate.resolve()
     try:
         candidate.relative_to(REPO_ROOT.resolve())
     except ValueError:
         return candidate, parsed.fragment
-
     if candidate.is_dir():
         if (candidate / "index.html").is_file():
             candidate = candidate / "index.html"
         elif (candidate / "README.md").is_file():
             candidate = candidate / "README.md"
-
     return candidate, parsed.fragment
 
 
@@ -102,24 +93,19 @@ def check_target(source: Path, raw_target: str, html_ids: dict[Path, set[str]]) 
     candidate, fragment = resolve_target(source, raw_target)
     if candidate is None:
         return []
-
     try:
         candidate.relative_to(REPO_ROOT.resolve())
     except ValueError:
         return [f"{source.relative_to(REPO_ROOT)}: target escapes repository: {raw_target}"]
-
     if not candidate.exists():
         return [f"{source.relative_to(REPO_ROOT)}: missing local target {raw_target}"]
-
     if fragment and candidate.suffix.lower() == ".html":
         ids = html_ids.get(candidate)
         if ids is None:
             _, ids = html_data(candidate)
             html_ids[candidate] = ids
         if fragment not in ids:
-            return [
-                f"{source.relative_to(REPO_ROOT)}: missing HTML fragment #{fragment} in {candidate.relative_to(REPO_ROOT)}"
-            ]
+            return [f"{source.relative_to(REPO_ROOT)}: missing HTML fragment #{fragment} in {candidate.relative_to(REPO_ROOT)}"]
     return []
 
 
@@ -133,12 +119,12 @@ def static_site_checks() -> list[str]:
         "docs/primer.css",
         "docs/validation.html",
         "docs/quickstart.html",
+        "docs/review.html",
         "docs/.nojekyll",
     ]
     for relative_path in required:
         if not (REPO_ROOT / relative_path).exists():
             errors.append(f"missing static-site artifact {relative_path}")
-
     for html_path in discover_files(".html"):
         text = html_path.read_text(encoding="utf-8").lower()
         if "<title>" not in text:
@@ -156,27 +142,21 @@ def main() -> int:
     html_ids: dict[Path, set[str]] = {}
     errors = static_site_checks()
     checked = 0
-
     for path in markdown_files:
         for target in markdown_targets(path):
             checked += 1
             errors.extend(check_target(path, target, html_ids))
-
     for path in html_files:
         targets, ids = html_data(path)
         html_ids[path.resolve()] = ids
         for target in targets:
             checked += 1
             errors.extend(check_target(path, target, html_ids))
-
     if errors:
         for error in errors:
             print(f"FAIL link/site: {error}", file=sys.stderr)
         return 1
-
-    print(
-        f"PASS: checked {checked} local link reference(s), {len(html_files)} HTML page(s), and required static-site artifacts"
-    )
+    print(f"PASS: checked {checked} local link reference(s), {len(html_files)} HTML page(s), and required static-site artifacts")
     print("NOTE: external links were not fetched or validated")
     return 0
 
