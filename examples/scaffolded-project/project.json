@@ -1,0 +1,22 @@
+{
+  "manifest_version": "0.4",
+  "primer_version": "0.4.0-candidate",
+  "project_id": "community-tool-sign-out-board",
+  "project_name": "Community Tool Sign-Out Board",
+  "status": "Proposed",
+  "human_authority": {
+    "role": "Fictional project owner",
+    "scope": "Scope, risk acceptance, release, and publication decisions"
+  },
+  "privacy": {
+    "classification": "Fictional",
+    "network_submission": false,
+    "contains_private_parallax_material": false
+  },
+  "artifacts": {
+    "stage_3": "stage-3-specification.md",
+    "stage_6": "stage-6-implementation-receipt.md",
+    "stage_9": "stage-9-proving-report.md",
+    "field_trial": "field-trial-receipt.md"
+  }
+}
