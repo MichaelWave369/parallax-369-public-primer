@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Parallax 3–6–9 Public Primer: a human-led method for moving from idea, to implementation, to evidence.">
+  <meta name="theme-color" content="#07111f">
+  <title>Parallax 3–6–9 Public Primer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Parallax 3–6–9 home">
+      <span class="brand-mark" aria-hidden="true">369</span>
+      <span>Parallax Public Primer</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#method">Method</a>
+      <a href="#boundary">Boundary</a>
+      <a href="#example">Example</a>
+      <a href="#resources">Resources</a>
+    </nav>
+    <a class="header-button" href="https://github.com/MichaelWave369/parallax-369-public-primer">View repository</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">Public Candidate v0.1</p>
+        <h1>From idea.<br>To implementation.<br><span>To evidence.</span></h1>
+        <p class="hero-intro">The Parallax 3–6–9 Method keeps specification, construction, and proof separate—so a polished output cannot quietly impersonate a proven result.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#method">Explore the method</a>
+          <a class="button secondary" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/examples/pocket-beacon/README.md">Read the walkthrough</a>
+        </div>
+        <p class="scope-note">Human-led · Tool-independent · Receipt-bearing · Evidence-scoped</p>
+      </div>
+
+      <div class="hero-visual" aria-label="Three-stage Parallax pipeline">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="stage-node node-three">
+          <strong>3</strong>
+          <span>Specify</span>
+        </div>
+        <div class="stage-node node-six">
+          <strong>6</strong>
+          <span>Build</span>
+        </div>
+        <div class="stage-node node-nine">
+          <strong>9</strong>
+          <span>Prove</span>
+        </div>
+        <div class="center-seal">
+          <span>Human</span>
+          <strong>Authority</strong>
+          <span>Retained</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="rule-band" aria-label="Core rule">
+      <p>A specification is not an implementation.</p>
+      <p>An implementation is not evidence.</p>
+      <p>Evidence does not authorize claims beyond its scope.</p>
+    </section>
+
+    <section class="section method-section" id="method">
+      <div class="section-heading">
+        <p class="eyebrow">One governed sequence</p>
+        <h2>Three stages. Three different jobs.</h2>
+        <p>Each stage produces a distinct artifact and passes through a human-controlled gate. No stage is allowed to impersonate another.</p>
+      </div>
+
+      <div class="stage-tabs" role="tablist" aria-label="Pipeline stages">
+        <button class="stage-tab active" id="tab-3" role="tab" aria-selected="true" aria-controls="panel-3" data-stage="3">
+          <span class="tab-number">3</span>
+          <span><strong>Specify</strong><small>Define the controlled target</small></span>
+        </button>
+        <button class="stage-tab" id="tab-6" role="tab" aria-selected="false" aria-controls="panel-6" data-stage="6" tabindex="-1">
+          <span class="tab-number">6</span>
+          <span><strong>Build</strong><small>Create the honest candidate</small></span>
+        </button>
+        <button class="stage-tab" id="tab-9" role="tab" aria-selected="false" aria-controls="panel-9" data-stage="9" tabindex="-1">
+          <span class="tab-number">9</span>
+          <span><strong>Prove</strong><small>Test and scope the claims</small></span>
+        </button>
+      </div>
+
+      <div class="stage-panels">
+        <article class="stage-panel active" id="panel-3" role="tabpanel" aria-labelledby="tab-3">
+          <div>
+            <p class="panel-question">What are we actually proposing, and what must be true?</p>
+            <h3>Turn the idea into a controlling specification.</h3>
+            <p>Preserve the original intent, separate facts from assumptions, identify human authority, make uncertainty visible, and write acceptance criteria that can actually be evaluated.</p>
+          </div>
+          <ul class="receipt-list">
+            <li>Facts, assumptions, hypotheses, proposals, unknowns</li>
+            <li>Scope, requirements, risks, and non-scope</li>
+            <li>Testable acceptance criteria</li>
+            <li>Decision history and Stage 6 handoff</li>
+          </ul>
+          <a class="text-link" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/method/03-specify.md">Open the Stage 3 guide →</a>
+        </article>
+
+        <article class="stage-panel" id="panel-6" role="tabpanel" aria-labelledby="tab-6" hidden>
+          <div>
+            <p class="panel-question">What is the smallest honest candidate we can build?</p>
+            <h3>Implement without rewriting the target.</h3>
+            <p>Map every requirement to a component and a status. Preserve deviations, dependencies, build instructions, mocks, simulations, failures, and deferred work.</p>
+          </div>
+          <ul class="receipt-list">
+            <li>Requirement-to-implementation traceability</li>
+            <li>Implemented, mocked, simulated, deferred, failed</li>
+            <li>Reproducible commands and artifact identity</li>
+            <li>Limitations and Stage 9 evidence handoff</li>
+          </ul>
+          <a class="text-link" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/method/06-build.md">Open the Stage 6 guide →</a>
+        </article>
+
+        <article class="stage-panel" id="panel-9" role="tabpanel" aria-labelledby="tab-9" hidden>
+          <div>
+            <p class="panel-question">What demonstrably works, where, and under which conditions?</p>
+            <h3>Preserve the evidence—including failure.</h3>
+            <p>Run the acceptance tests, retain observations, document the environment, identify unsupported claims, and give the authorized human a scoped release recommendation.</p>
+          </div>
+          <ul class="receipt-list">
+            <li>Pass, fail, blocked, inconclusive, not run</li>
+            <li>Raw observations and reproduction limits</li>
+            <li>Supported and unsupported claim matrix</li>
+            <li>Human release decision and rationale</li>
+          </ul>
+          <a class="text-link" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/method/09-prove.md">Open the Stage 9 guide →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section boundary-section" id="boundary">
+      <div class="boundary-card">
+        <div>
+          <p class="eyebrow">The public boundary</p>
+          <h2>Teach the method.<br>Protect the machinery.</h2>
+          <p>This repository is independently authored as a public primer. It is not a mirror, export, or reconstruction path for the private Parallax SkillSet.</p>
+          <a class="button secondary" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/PUBLIC_RELEASE_BOUNDARY.md">Read the controlling boundary</a>
+        </div>
+        <div class="boundary-columns">
+          <div class="boundary-list allowed">
+            <h3>Public by design</h3>
+            <ul>
+              <li>High-level stage guides</li>
+              <li>Blank public templates</li>
+              <li>Synthetic examples</li>
+              <li>Governance and claim rules</li>
+              <li>Generic validation checklists</li>
+            </ul>
+          </div>
+          <div class="boundary-list protected">
+            <h3>Protected internally</h3>
+            <ul>
+              <li>Private prompts and skill logic</li>
+              <li>Agent or swarm orchestration</li>
+              <li>Private canon and project records</li>
+              <li>Internal validators and schemas</li>
+              <li>Personal or connected-account data</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section example-section" id="example">
+      <div class="section-heading compact">
+        <p class="eyebrow">Synthetic walkthrough</p>
+        <h2>Pocket Beacon: a tiny project with an honest failure.</h2>
+        <p>A fictional offline workshop-status page travels through all three stages. One retention test fails—and the method refuses to hide it.</p>
+      </div>
+
+      <div class="example-flow">
+        <article>
+          <span class="mini-number">3</span>
+          <h3>Specify</h3>
+          <p>Three statuses, local operation, responsive layout, and explicit non-scope.</p>
+        </article>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <article>
+          <span class="mini-number">6</span>
+          <h3>Build</h3>
+          <p>A static candidate with requirement traceability and disclosed limitations.</p>
+        </article>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <article class="failure-card">
+          <span class="mini-number">9</span>
+          <h3>Prove</h3>
+          <p>Three criteria pass. State retention fails. The result returns to Stage 6.</p>
+        </article>
+      </div>
+
+      <a class="button primary" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/examples/pocket-beacon/README.md">Inspect the complete example</a>
+    </section>
+
+    <section class="section anti-laundering">
+      <div class="section-heading compact">
+        <p class="eyebrow">No trust laundering</p>
+        <h2>Polish, confidence, and reputation are not proof.</h2>
+      </div>
+      <div class="truth-grid">
+        <article><strong>A document</strong><span>is not a validated specification.</span></article>
+        <article><strong>A simulation</strong><span>is not a field result.</span></article>
+        <article><strong>A passing test</strong><span>is not universal truth.</span></article>
+        <article><strong>Repository inclusion</strong><span>is not Parallax certification.</span></article>
+      </div>
+    </section>
+
+    <section class="section resources-section" id="resources">
+      <div class="section-heading compact">
+        <p class="eyebrow">Start with the public kit</p>
+        <h2>Guides, templates, and governance.</h2>
+      </div>
+      <div class="resource-grid">
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/templates/controlling-specification.md">
+          <span>Template</span><strong>Controlling specification</strong><small>Define the target and acceptance criteria.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/templates/implementation-receipt.md">
+          <span>Template</span><strong>Implementation receipt</strong><small>Map requirements to the candidate.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/templates/proving-ground-report.md">
+          <span>Template</span><strong>Proving-ground report</strong><small>Record scoped evidence and failures.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/templates/public-release-review.md">
+          <span>Safety gate</span><strong>Public release review</strong><small>Block private or unsafe publication.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/GOVERNANCE.md">
+          <span>Governance</span><strong>Human authority</strong><small>Understand decisions, status, and dissent.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/CONTRIBUTING.md">
+          <span>Community</span><strong>Contribution guide</strong><small>Improve the primer without crossing the boundary.</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <p class="eyebrow">The Parallax promise</p>
+      <blockquote>Do not ask people to trust the intelligence.<br>Let them inspect the decisions, implementation, and receipts.</blockquote>
+      <div class="hero-actions centered">
+        <a class="button primary" href="https://github.com/MichaelWave369/parallax-369-public-primer">Explore on GitHub</a>
+        <a class="button secondary" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/NOTICE.md">Read the scope notice</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Parallax 3–6–9 Public Primer</strong> · Educational and experimental public candidate.</p>
+    <p>Use does not constitute certification, endorsement, scientific validation, legal approval, or safety approval.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
