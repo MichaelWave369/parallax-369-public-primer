@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://michaelwave369.github.io/parallax-369-public-primer/schemas/field-trial-receipt.schema.json",
+  "title": "Parallax 3-6-9 Public Field-Trial Receipt",
+  "description": "Structural receipt for a voluntary, non-sensitive usability trial. Validation does not prove the trial occurred or authenticate observations.",
+  "type": "object",
+  "required": [
+    "receipt_version",
+    "trial_id",
+    "primer_version",
+    "project_type",
+    "participant_count",
+    "consent",
+    "task",
+    "completion",
+    "time_band",
+    "help_needed",
+    "understanding",
+    "observations",
+    "evidence_limits",
+    "maintainer_decision"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "receipt_version": {
+      "const": "0.4"
+    },
+    "trial_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "primer_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_type": {
+      "type": "string",
+      "enum": ["Fictional", "Public", "Non-sensitive local"]
+    },
+    "participant_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "consent": {
+      "type": "object",
+      "required": ["voluntary", "could_stop", "no_sensitive_material", "minimal_data"],
+      "additionalProperties": false,
+      "properties": {
+        "voluntary": {"const": true},
+        "could_stop": {"const": true},
+        "no_sensitive_material": {"const": true},
+        "minimal_data": {"const": true}
+      }
+    },
+    "task": {
+      "type": "string",
+      "minLength": 1
+    },
+    "completion": {
+      "type": "string",
+      "enum": ["Completed", "Partial", "Abandoned", "Blocked"]
+    },
+    "time_band": {
+      "type": "string",
+      "enum": ["Under 15 minutes", "15-30 minutes", "31-60 minutes", "Over 60 minutes"]
+    },
+    "help_needed": {
+      "type": "string",
+      "enum": ["None", "Quick clarification", "Repeated assistance", "Facilitator takeover"]
+    },
+    "understanding": {
+      "type": "object",
+      "required": ["stage_separation", "human_authority", "validator_boundary"],
+      "additionalProperties": false,
+      "properties": {
+        "stage_separation": {
+          "type": "string",
+          "enum": ["Clear", "Partly clear", "Unclear"]
+        },
+        "human_authority": {
+          "type": "string",
+          "enum": ["Clear", "Partly clear", "Unclear"]
+        },
+        "validator_boundary": {
+          "type": "string",
+          "enum": ["Clear", "Partly clear", "Unclear"]
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "observation", "identifying_content_removed"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "observation": {"type": "string", "minLength": 1},
+          "identifying_content_removed": {"const": true}
+        }
+      }
+    },
+    "evidence_limits": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "maintainer_decision": {
+      "type": "object",
+      "required": ["status", "authority"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["Pending", "Accept candidate change", "Decline", "Defer", "Request more evidence"]
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
