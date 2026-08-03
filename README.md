@@ -1,6 +1,6 @@
 # Parallax 3–6–9 Public Primer
 
-> **Public Candidate v0.1** — A human-led method for moving from idea, to implementation, to evidence.
+> **Public Candidate v0.2** — A human-led method for moving from idea, to implementation, to evidence.
 
 The Parallax 3–6–9 Method separates three activities that are often blurred together:
 
@@ -28,12 +28,13 @@ Humans retain authority over scope, risk, acceptance, publication, and release.
 
 ## Start here
 
+- [Live public site](https://michaelwave369.github.io/parallax-369-public-primer/)
+- [One-page printable primer](https://michaelwave369.github.io/parallax-369-public-primer/primer.html)
 - [Stage 3 — Specify](method/03-specify.md)
 - [Stage 6 — Build](method/06-build.md)
 - [Stage 9 — Prove](method/09-prove.md)
-- [Synthetic Pocket Beacon walkthrough](examples/pocket-beacon/README.md)
+- [Public glossary](GLOSSARY.md)
 - [Public-release boundary](PUBLIC_RELEASE_BOUNDARY.md)
-- [Governance](GOVERNANCE.md)
 
 ## Public templates
 
@@ -42,11 +43,27 @@ Humans retain authority over scope, risk, acceptance, publication, and release.
 - [Proving-ground report](templates/proving-ground-report.md)
 - [Public-release review](templates/public-release-review.md)
 
+## Synthetic examples
+
+- [Pocket Beacon — software walkthrough](examples/pocket-beacon/README.md)
+- [Community Seed-Swap Station — non-software walkthrough](examples/seed-swap-station/README.md)
+- [Filled decision receipt](examples/decision-receipt-example.md)
+
+The examples are fictional. They teach traceability and scoped evidence; they are not product validation or field proof.
+
+## v0.2 usability and review kit
+
+- [Accessibility review receipt](ACCESSIBILITY_REVIEW_v0.2.md)
+- [Public feedback guide](FEEDBACK.md)
+- [Compatibility and versioning rules](COMPATIBILITY_AND_VERSIONING.md)
+- [Roadmap](ROADMAP.md)
+- [Changelog](CHANGELOG.md)
+
+The repository includes a public feedback issue template. Feedback gathering remains ongoing after release; the existence of a feedback channel is not evidence that every user or accessibility need has been represented.
+
 ## GitHub Pages site
 
-The static site lives in [`docs/`](docs/) and is designed to be published through GitHub Pages from the `main` branch `/docs` folder. It uses no external framework, analytics, remote fonts, or third-party runtime assets.
-
-After this candidate is merged, a repository administrator can enable Pages under **Settings → Pages → Deploy from a branch → `main` / `/docs`**.
+The static site lives in [`docs/`](docs/) and is published through GitHub Pages from the `main` branch `/docs` folder. It uses no external framework, analytics, remote fonts, or third-party runtime assets.
 
 ## Public-release boundary
 
@@ -75,15 +92,17 @@ The primer prohibits substitutions such as:
 
 Use explicit labels where applicable:
 
-`Proposed` · `Candidate` · `Implemented` · `Simulated` · `Mocked` · `Deferred` · `Failed` · `Verified in scope` · `Unknown`
+`Proposed` · `Candidate` · `Implemented` · `Simulated` · `Mocked` · `Deferred` · `Failed` · `Blocked` · `Inconclusive` · `Not run` · `Verified in scope` · `Unknown`
 
 ## Tool independence
 
 The public method is not tied to a particular model, company, programming language, project-management platform, or deployment service. A person or team can use the templates manually or adapt them to their own accountable workflow.
 
-## Contributing
+Downstream projects should read [COMPATIBILITY_AND_VERSIONING.md](COMPATIBILITY_AND_VERSIONING.md) before describing themselves as compatible with the public primer.
 
-Public contributions are welcome when they are independently created for this primer and respect the publication boundary. Read [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+## Contributing and feedback
+
+Public contributions are welcome when they are independently created for this primer and respect the publication boundary. Read [CONTRIBUTING.md](CONTRIBUTING.md), [FEEDBACK.md](FEEDBACK.md), [SECURITY.md](SECURITY.md), and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## License and notice
 
