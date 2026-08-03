@@ -41,62 +41,85 @@
   }
 
   const versionLabel = document.querySelector('.hero .eyebrow');
-  if (versionLabel) versionLabel.textContent = 'Public Candidate v0.2';
+  if (versionLabel) versionLabel.textContent = 'Public Candidate v0.3';
 
   const nav = document.querySelector('.site-header nav');
-  if (nav && !nav.querySelector('[data-v02-link]')) {
-    const primerLink = document.createElement('a');
-    primerLink.href = 'primer.html';
-    primerLink.textContent = 'Print Primer';
-    primerLink.dataset.v02Link = 'true';
-    nav.append(primerLink);
+  if (nav) {
+    const navItems = [
+      { id: 'print-primer', href: 'primer.html', label: 'Print Primer' },
+      { id: 'validation', href: 'validation.html', label: 'Validation' }
+    ];
+
+    navItems.forEach((item) => {
+      if (nav.querySelector(`[data-nav-id="${item.id}"]`)) return;
+      const link = document.createElement('a');
+      link.href = item.href;
+      link.textContent = item.label;
+      link.dataset.navId = item.id;
+      nav.append(link);
+    });
   }
 
   const resourceGrid = document.querySelector('.resource-grid');
-  if (resourceGrid && !resourceGrid.querySelector('[data-v02-resource]')) {
+  if (resourceGrid) {
     const resources = [
       {
+        id: 'print-primer',
         href: 'primer.html',
         label: 'One page',
         title: 'Printable public primer',
         detail: 'A concise screen-and-paper introduction to 3–6–9.'
       },
       {
+        id: 'glossary',
         href: 'https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/GLOSSARY.md',
         label: 'Reference',
         title: 'Public glossary',
         detail: 'Definitions for claims, receipts, evidence, authority, and status.'
       },
       {
+        id: 'seed-swap',
         href: 'https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/examples/seed-swap-station/README.md',
         label: 'Physical example',
         title: 'Seed-swap station',
         detail: 'A non-software walkthrough with a preserved human-factors failure.'
       },
       {
+        id: 'decision-receipt',
         href: 'https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/examples/decision-receipt-example.md',
         label: 'Receipt',
         title: 'Decision example',
         detail: 'See how options, assumptions, authority, dissent, and later evidence connect.'
       },
       {
+        id: 'feedback',
         href: 'https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/FEEDBACK.md',
         label: 'Review',
         title: 'Public feedback guide',
         detail: 'Report clarity, usability, accessibility, and compatibility observations.'
       },
       {
+        id: 'compatibility',
         href: 'https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/COMPATIBILITY_AND_VERSIONING.md',
         label: 'Adaptation',
         title: 'Compatibility rules',
         detail: 'Preserve the method contract while adapting format and tooling.'
+      },
+      {
+        id: 'validation',
+        href: 'validation.html',
+        label: 'v0.3 helpers',
+        title: 'Public validation',
+        detail: 'Local receipt, template, link, static-site, and report checks with no release authority.'
       }
     ];
 
     resources.forEach((resource) => {
+      if (resourceGrid.querySelector(`[data-resource-id="${resource.id}"]`)) return;
+
       const link = document.createElement('a');
       link.href = resource.href;
-      link.dataset.v02Resource = 'true';
+      link.dataset.resourceId = resource.id;
 
       const label = document.createElement('span');
       label.textContent = resource.label;
