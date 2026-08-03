@@ -178,7 +178,10 @@ def main() -> int:
         ("Template completeness", [sys.executable, str(SCRIPTS / "check_templates.py")]),
         ("Local links and static site", [sys.executable, str(SCRIPTS / "check_links.py")]),
     ]
-    passed = all(run(label, command) for label, command in checks)
+    passed = True
+    for label, command in checks:
+        if not run(label, command):
+            passed = False
     for test in (
         invalid_receipt_test,
         invalid_field_trial_test,
