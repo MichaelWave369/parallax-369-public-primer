@@ -13,12 +13,24 @@ The roadmap applies only to this independently authored public primer. It is not
 
 ## v0.2 — Usability and review
 
-- [ ] Gather public feedback on clarity and usefulness.
-- [ ] Run an accessibility review of the site and templates.
-- [ ] Add a concise one-page printable primer.
-- [ ] Add a glossary and decision-receipt example.
-- [ ] Add a second synthetic example in a non-software context.
-- [ ] Clarify compatibility and versioning rules for downstream adaptations.
+- [x] Open a structured public feedback channel and issue template.
+- [ ] Gather public feedback on clarity and usefulness. **Ongoing after v0.2 publication.**
+- [x] Run and publish an accessibility review of the site and templates.
+- [x] Add a concise one-page printable primer.
+- [x] Add a glossary and decision-receipt example.
+- [x] Add a second synthetic example in a non-software context.
+- [x] Clarify compatibility and versioning rules for downstream adaptations.
+
+### v0.2 receipts
+
+- [`FEEDBACK.md`](FEEDBACK.md)
+- [`ACCESSIBILITY_REVIEW_v0.2.md`](ACCESSIBILITY_REVIEW_v0.2.md)
+- [`docs/primer.html`](docs/primer.html)
+- [`GLOSSARY.md`](GLOSSARY.md)
+- [`examples/decision-receipt-example.md`](examples/decision-receipt-example.md)
+- [`examples/seed-swap-station/README.md`](examples/seed-swap-station/README.md)
+- [`COMPATIBILITY_AND_VERSIONING.md`](COMPATIBILITY_AND_VERSIONING.md)
+- [`releases/v0.2-public-release-review.md`](releases/v0.2-public-release-review.md)
 
 ## v0.3 — Public validation helpers
 
@@ -43,4 +55,4 @@ The following are intentionally not promised by this public repository:
 
 ## Roadmap governance
 
-A roadmap item is a proposal, not a commitment or proof of implementation. Completed items should link to a versioned artifact and review receipt.
+A roadmap item is a proposal, not a commitment or proof of implementation. Completed items should link to a versioned artifact and review receipt. Ongoing work must remain marked ongoing rather than being converted into a completed claim for release convenience.
