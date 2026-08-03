@@ -1,0 +1,41 @@
+name: Public validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-validation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-public-artifacts:
+    name: Structural checks — no release authority
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out public repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Run public validation helpers
+        run: python scripts/run_public_checks.py
+
+      - name: Preserve authority boundary
+        if: always()
+        run: |
+          echo "This workflow may report pass or failure."
+          echo "It cannot merge, publish, deploy, release, certify, or approve on behalf of a human maintainer."
