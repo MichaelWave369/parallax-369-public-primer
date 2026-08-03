@@ -1,0 +1,42 @@
+{
+  "receipt_version": "0.4",
+  "trial_id": "FT-PB-001",
+  "primer_version": "0.4.0-candidate",
+  "project_type": "Fictional",
+  "participant_count": 1,
+  "consent": {
+    "voluntary": true,
+    "could_stop": true,
+    "no_sensitive_material": true,
+    "minimal_data": true
+  },
+  "task": "Use the quickstart to create a fictional Pocket Beacon project and explain what each stage and validator can establish.",
+  "completion": "Partial",
+  "time_band": "15-30 minutes",
+  "help_needed": "Quick clarification",
+  "understanding": {
+    "stage_separation": "Clear",
+    "human_authority": "Clear",
+    "validator_boundary": "Partly clear"
+  },
+  "observations": [
+    {
+      "id": "FT-OBS-01",
+      "observation": "The participant created the scaffold and correctly described Stage 3 as defining the target before construction.",
+      "identifying_content_removed": true
+    },
+    {
+      "id": "FT-OBS-02",
+      "observation": "The participant initially interpreted a passing structural validator as evidence that the fictional product worked, then corrected the interpretation after reading the boundary message.",
+      "identifying_content_removed": true
+    }
+  ],
+  "evidence_limits": [
+    "Single synthetic trial with one participant role and no independent observer.",
+    "The receipt documents a fictional example and does not establish usability for other people, domains, or assistive technologies."
+  ],
+  "maintainer_decision": {
+    "status": "Pending",
+    "authority": "Repository maintainer"
+  }
+}
