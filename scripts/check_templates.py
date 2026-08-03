@@ -62,6 +62,21 @@ REQUIRED_SECTIONS = {
         "## Findings",
         "## Decision receipt",
     ],
+    "templates/field-trial-receipt.md": [
+        "## Trial identity",
+        "## Consent and data boundary",
+        "## Task",
+        "## Environment",
+        "## Completion summary",
+        "## Understanding checks",
+        "## Raw observations",
+        "## Interpretation",
+        "## Barriers and unexpected behavior",
+        "## Participant feedback",
+        "## Proposed changes",
+        "## Evidence limits",
+        "## Maintainer decision",
+    ],
 }
 
 REQUIRED_PHRASES = {
@@ -84,6 +99,11 @@ REQUIRED_PHRASES = {
         "A single **No**, **Unknown**, or unresolved concern blocks publication.",
         "Human publication authority is explicit.",
         "No private prompts, hidden rubrics, skill instructions, or orchestration logic are present.",
+    ],
+    "templates/field-trial-receipt.md": [
+        "Participation was voluntary.",
+        "Separate observer interpretation from raw observations.",
+        "A field-trial receipt documents observations. It does not certify the primer, authenticate the observations, or authorize its own acceptance.",
     ],
 }
 

@@ -1,0 +1,30 @@
+{
+  "receipt_version": "0.4",
+  "trial_id": "FT-INVALID",
+  "primer_version": "0.4.0-candidate",
+  "project_type": "Fictional",
+  "participant_count": 1,
+  "consent": {
+    "voluntary": false,
+    "could_stop": true,
+    "no_sensitive_material": true,
+    "minimal_data": true
+  },
+  "task": "Intentional negative test fixture.",
+  "completion": "Completed",
+  "time_band": "Under 15 minutes",
+  "help_needed": "None",
+  "understanding": {
+    "stage_separation": "Clear",
+    "human_authority": "Clear",
+    "validator_boundary": "Clear"
+  },
+  "observations": [],
+  "evidence_limits": [
+    "This fixture is intentionally invalid and must never be treated as a real trial."
+  ],
+  "maintainer_decision": {
+    "status": "Pending",
+    "authority": "Repository maintainer"
+  }
+}

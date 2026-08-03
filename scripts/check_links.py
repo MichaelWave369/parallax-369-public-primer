@@ -131,6 +131,8 @@ def static_site_checks() -> list[str]:
         "docs/app.js",
         "docs/primer.html",
         "docs/primer.css",
+        "docs/validation.html",
+        "docs/quickstart.html",
         "docs/.nojekyll",
     ]
     for relative_path in required:

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Run every v0.3 public-primer validation helper in a deterministic sequence."""
+"""Run every public-primer validation helper in a deterministic sequence."""
 
 from __future__ import annotations
 
+import json
 import subprocess
 import sys
 import tempfile
@@ -22,13 +23,12 @@ def run(label: str, command: list[str]) -> bool:
     return True
 
 
-def invalid_receipt_smoke_test() -> bool:
-    print("\n== Invalid receipt rejection smoke test ==")
-    command = [
-        sys.executable,
-        str(SCRIPTS / "validate_receipts.py"),
-        "tests/fixtures/invalid-public-receipt.json",
-    ]
+def expected_failure(
+    label: str,
+    command: list[str],
+    required_diagnostics: list[str],
+) -> bool:
+    print(f"\n== {label} ==")
     completed = subprocess.run(
         command,
         cwd=REPO_ROOT,
@@ -37,26 +37,47 @@ def invalid_receipt_smoke_test() -> bool:
         text=True,
     )
     combined = f"{completed.stdout}\n{completed.stderr}"
-    required_failures = [
-        "expected at least 1 items, got 0",
-        "unknown evidence id 'EV-MISSING'",
-    ]
-
     if completed.returncode == 0:
-        print("FAIL: intentionally invalid receipt was accepted", file=sys.stderr)
+        print(f"FAIL: {label} unexpectedly passed", file=sys.stderr)
         return False
-    missing = [phrase for phrase in required_failures if phrase not in combined]
+    missing = [phrase for phrase in required_diagnostics if phrase not in combined]
     if missing:
         for phrase in missing:
-            print(
-                f"FAIL invalid-receipt smoke test: missing expected diagnostic {phrase!r}",
-                file=sys.stderr,
-            )
+            print(f"FAIL {label}: missing expected diagnostic {phrase!r}", file=sys.stderr)
         print(combined, file=sys.stderr)
         return False
-
-    print("PASS: invalid receipt was rejected for both structural and evidence-reference errors")
+    print(f"PASS: {label} was correctly rejected")
     return True
+
+
+def invalid_receipt_smoke_test() -> bool:
+    return expected_failure(
+        "Invalid receipt rejection smoke test",
+        [
+            sys.executable,
+            str(SCRIPTS / "validate_receipts.py"),
+            "tests/fixtures/invalid-public-receipt.json",
+        ],
+        [
+            "expected at least 1 items, got 0",
+            "unknown evidence id 'EV-MISSING'",
+        ],
+    )
+
+
+def invalid_field_trial_smoke_test() -> bool:
+    return expected_failure(
+        "Invalid field-trial rejection smoke test",
+        [
+            sys.executable,
+            str(SCRIPTS / "validate_field_trials.py"),
+            "tests/fixtures/invalid-field-trial.json",
+        ],
+        [
+            "expected constant True, got False",
+            "expected at least 1 items, got 0",
+        ],
+    )
 
 
 def generator_smoke_test() -> bool:
@@ -72,9 +93,7 @@ def generator_smoke_test() -> bool:
         ]
         completed = subprocess.run(command, cwd=REPO_ROOT, check=False)
         if completed.returncode != 0:
-            print(
-                f"FAIL: report generator exited with {completed.returncode}", file=sys.stderr
-            )
+            print(f"FAIL: report generator exited with {completed.returncode}", file=sys.stderr)
             return False
         try:
             text = output.read_text(encoding="utf-8")
@@ -99,6 +118,73 @@ def generator_smoke_test() -> bool:
     return True
 
 
+def scaffolder_smoke_test() -> bool:
+    print("\n== Local project scaffolder smoke test ==")
+    with tempfile.TemporaryDirectory(prefix="parallax-scaffold-") as temp_dir:
+        output = Path(temp_dir) / "notice-board"
+        command = [
+            sys.executable,
+            str(SCRIPTS / "init_public_project.py"),
+            "--name",
+            "Neighborhood Notice Board",
+            "--human-authority",
+            "Project owner",
+            "--classification",
+            "Fictional",
+            "--output",
+            str(output),
+        ]
+        created = subprocess.run(command, cwd=REPO_ROOT, check=False)
+        if created.returncode != 0:
+            print(f"FAIL: scaffolder exited with {created.returncode}", file=sys.stderr)
+            return False
+
+        validated = subprocess.run(
+            [sys.executable, str(SCRIPTS / "validate_projects.py"), str(output)],
+            cwd=REPO_ROOT,
+            check=False,
+        )
+        if validated.returncode != 0:
+            print("FAIL: generated scaffold did not pass project validation", file=sys.stderr)
+            return False
+
+        required_files = {
+            "README.md",
+            "project.json",
+            "stage-3-specification.md",
+            "stage-6-implementation-receipt.md",
+            "stage-9-proving-report.md",
+            "field-trial-receipt.md",
+        }
+        actual_files = {path.name for path in output.iterdir() if path.is_file()}
+        missing = sorted(required_files - actual_files)
+        if missing:
+            print(f"FAIL: scaffold missing files: {', '.join(missing)}", file=sys.stderr)
+            return False
+
+        manifest = json.loads((output / "project.json").read_text(encoding="utf-8"))
+        if manifest["privacy"]["network_submission"] is not False:
+            print("FAIL: scaffold manifest does not preserve no-network boundary", file=sys.stderr)
+            return False
+        if manifest["human_authority"]["role"] != "Project owner":
+            print("FAIL: scaffold did not preserve declared human authority", file=sys.stderr)
+            return False
+
+        repeated = subprocess.run(
+            command,
+            cwd=REPO_ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        if repeated.returncode == 0 or "refusing to overwrite" not in repeated.stderr:
+            print("FAIL: scaffolder did not reject an existing destination", file=sys.stderr)
+            return False
+
+    print("PASS: scaffold created, validated, preserved authority, and refused overwrite")
+    return True
+
+
 def main() -> int:
     python_files = sorted(str(path) for path in SCRIPTS.glob("*.py"))
     checks = [
@@ -109,6 +195,14 @@ def main() -> int:
         (
             "Public receipt validation",
             [sys.executable, str(SCRIPTS / "validate_receipts.py")],
+        ),
+        (
+            "Public project validation",
+            [sys.executable, str(SCRIPTS / "validate_projects.py")],
+        ),
+        (
+            "Public field-trial validation",
+            [sys.executable, str(SCRIPTS / "validate_field_trials.py")],
         ),
         (
             "Template completeness",
@@ -127,7 +221,11 @@ def main() -> int:
 
     if not invalid_receipt_smoke_test():
         passed = False
+    if not invalid_field_trial_smoke_test():
+        passed = False
     if not generator_smoke_test():
+        passed = False
+    if not scaffolder_smoke_test():
         passed = False
 
     print("\n== Public validation result ==")
@@ -136,6 +234,7 @@ def main() -> int:
         return 1
 
     print("PASS IN SCOPE: all declared public structural checks passed")
+    print("NO TELEMETRY: the adoption kit performs no network submission")
     print("NO AUTHORIZATION: human review is still required for merge and publication")
     return 0
 

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://michaelwave369.github.io/parallax-369-public-primer/schemas/public-project.schema.json",
+  "title": "Parallax 3-6-9 Public Project Manifest",
+  "description": "Structural manifest for a local public-primer project. Validation does not certify the project or authenticate its contents.",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "primer_version",
+    "project_id",
+    "project_name",
+    "status",
+    "human_authority",
+    "privacy",
+    "artifacts"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "manifest_version": {
+      "const": "0.4"
+    },
+    "primer_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": ["Proposed", "Candidate", "Accepted", "Superseded"]
+    },
+    "human_authority": {
+      "type": "object",
+      "required": ["role", "scope"],
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "required": ["classification", "network_submission", "contains_private_parallax_material"],
+      "additionalProperties": false,
+      "properties": {
+        "classification": {
+          "type": "string",
+          "enum": ["Public", "Non-sensitive local", "Fictional"]
+        },
+        "network_submission": {
+          "const": false
+        },
+        "contains_private_parallax_material": {
+          "const": false
+        }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "required": ["stage_3", "stage_6", "stage_9", "field_trial"],
+      "additionalProperties": false,
+      "properties": {
+        "stage_3": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage_6": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage_9": {
+          "type": "string",
+          "minLength": 1
+        },
+        "field_trial": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
