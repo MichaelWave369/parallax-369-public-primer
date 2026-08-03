@@ -6,6 +6,8 @@
 
 - **Trial ID:**
 - **Primer version:**
+- **Receipt version:** 0.4 / 0.5
+- **Project key:** Stable non-sensitive identifier required for evidence-review bundles
 - **Date:**
 - **Facilitator role:**
 - **Project type:** Fictional / Public / Non-sensitive local
@@ -26,11 +28,15 @@ What was the participant asked to accomplish?
 
 ## Environment
 
-- **Operating system / device:**
+- **Interaction mode:**
+- **Operating system / device / platform:**
 - **Python version:**
 - **Browser or Markdown renderer:**
+- **Facilitation:** None / Quick clarification available / Other
 - **Assistive technology, when voluntarily disclosed and relevant:**
 - **Other material conditions:**
+
+Record enough context to expose comparison limits. Do not include identifying or sensitive information.
 
 ## Completion summary
 
@@ -78,6 +84,8 @@ Use generalized wording unless publication permission is explicit.
 
 ## Evidence limits
 
+Include limitations involving sample size, synthetic status, facilitation, platform, input method, observer independence, candidate version, and comparability.
+
 -
 
 ## Maintainer decision
@@ -87,5 +95,7 @@ Use generalized wording unless publication permission is explicit.
 - **Reasoning:**
 - **Dissent:**
 - **Affected roadmap / version:**
+
+When reviewing multiple receipts, follow `EVIDENCE_REVIEW.md`. A shared project key does not prove equivalent conditions.
 
 > A field-trial receipt documents observations. It does not certify the primer, authenticate the observations, or authorize its own acceptance.
