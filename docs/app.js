@@ -41,11 +41,12 @@
   }
 
   const versionLabel = document.querySelector('.hero .eyebrow');
-  if (versionLabel) versionLabel.textContent = 'Public Candidate v0.3';
+  if (versionLabel) versionLabel.textContent = 'Public Candidate v0.4';
 
   const nav = document.querySelector('.site-header nav');
   if (nav) {
     const navItems = [
+      { id: 'quickstart', href: 'quickstart.html', label: 'Quickstart' },
       { id: 'print-primer', href: 'primer.html', label: 'Print Primer' },
       { id: 'validation', href: 'validation.html', label: 'Validation' }
     ];
@@ -63,6 +64,13 @@
   const resourceGrid = document.querySelector('.resource-grid');
   if (resourceGrid) {
     const resources = [
+      {
+        id: 'quickstart',
+        href: 'quickstart.html',
+        label: 'v0.4 start',
+        title: 'First project quickstart',
+        detail: 'Create a local project scaffold, preserve human authority, and gather real usability observations.'
+      },
       {
         id: 'print-primer',
         href: 'primer.html',
@@ -111,6 +119,13 @@
         label: 'v0.3 helpers',
         title: 'Public validation',
         detail: 'Local receipt, template, link, static-site, and report checks with no release authority.'
+      },
+      {
+        id: 'field-trial',
+        href: 'https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/FIELD_TRIAL.md',
+        label: 'v0.4 evidence',
+        title: 'Field-trial protocol',
+        detail: 'Voluntary, minimal, non-sensitive observations that can inform a later human decision.'
       }
     ];
 
