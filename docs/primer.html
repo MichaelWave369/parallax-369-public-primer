@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A concise printable introduction to the Parallax 3–6–9 Public Primer.">
+  <title>Parallax 3–6–9 — One-Page Public Primer</title>
+  <link rel="stylesheet" href="primer.css">
+</head>
+<body>
+  <a class="skip-link" href="#primer">Skip to primer</a>
+
+  <header class="screen-toolbar" aria-label="Document actions">
+    <a href="./">← Return to the public site</a>
+    <button type="button" onclick="window.print()">Print this primer</button>
+  </header>
+
+  <main id="primer" class="sheet">
+    <header class="primer-header">
+      <div>
+        <p class="kicker">Public Candidate v0.2</p>
+        <h1>Parallax 3–6–9</h1>
+        <p class="subtitle">A human-led method for moving from idea, to implementation, to evidence.</p>
+      </div>
+      <div class="seal" aria-label="Specify, Build, Prove">
+        <span>3</span><span>6</span><span>9</span>
+      </div>
+    </header>
+
+    <section class="core-rule" aria-labelledby="core-rule-title">
+      <h2 id="core-rule-title">The core rule</h2>
+      <p><strong>A specification is not an implementation.</strong> An implementation is not evidence. Evidence does not authorize claims beyond its scope.</p>
+    </section>
+
+    <section class="stages" aria-label="The three stages">
+      <article>
+        <p class="number">3</p>
+        <h2>Specify</h2>
+        <p class="question">What are we actually proposing, and what must be true?</p>
+        <ul>
+          <li>Preserve original intent and provenance.</li>
+          <li>Separate facts, assumptions, hypotheses, proposals, and unknowns.</li>
+          <li>Define scope, authority, requirements, risks, and non-scope.</li>
+          <li>Write testable acceptance criteria.</li>
+        </ul>
+        <p class="output"><strong>Output:</strong> Controlling specification and Stage 6 handoff.</p>
+      </article>
+
+      <article>
+        <p class="number">6</p>
+        <h2>Build</h2>
+        <p class="question">What is the smallest honest candidate we can build?</p>
+        <ul>
+          <li>Keep the controlling specification unchanged.</li>
+          <li>Map each requirement to a component and status.</li>
+          <li>Disclose mocks, simulations, deviations, failures, and deferred work.</li>
+          <li>Record dependencies, commands, and artifact identity.</li>
+        </ul>
+        <p class="output"><strong>Output:</strong> Candidate, traceability map, and implementation receipt.</p>
+      </article>
+
+      <article>
+        <p class="number">9</p>
+        <h2>Prove</h2>
+        <p class="question">What demonstrably works, where, and under which conditions?</p>
+        <ul>
+          <li>Run declared acceptance tests.</li>
+          <li>Preserve observations, conditions, failures, and blocked tests.</li>
+          <li>Separate supported from unsupported claims.</li>
+          <li>Return a scoped recommendation to the human authority.</li>
+        </ul>
+        <p class="output"><strong>Output:</strong> Evidence report and human release decision.</p>
+      </article>
+    </section>
+
+    <section class="receipt-chain" aria-labelledby="receipt-title">
+      <h2 id="receipt-title">The receipt chain</h2>
+      <p>Intent → Requirement → Implementation status → Test → Observation → Claim boundary → Human decision</p>
+    </section>
+
+    <div class="lower-grid">
+      <section aria-labelledby="status-title">
+        <h2 id="status-title">Say what is true</h2>
+        <p class="tags"><span>implemented</span><span>mocked</span><span>simulated</span><span>deferred</span><span>failed</span><span>blocked</span><span>inconclusive</span><span>not run</span></p>
+      </section>
+
+      <section aria-labelledby="authority-title">
+        <h2 id="authority-title">Human authority remains</h2>
+        <p>Tools may organize, draft, build, test, and recommend. They may not silently change the target, accept material risk, certify a result, or authorize publication.</p>
+      </section>
+
+      <section aria-labelledby="boundary-title">
+        <h2 id="boundary-title">Public boundary</h2>
+        <p>This primer teaches a public method. It does not expose private prompts, skill logic, orchestration, canon, project records, credentials, conversations, or accumulated internal intelligence.</p>
+      </section>
+    </div>
+
+    <footer>
+      <p><strong>No trust laundering:</strong> polish is not proof; simulation is not field evidence; repository inclusion is not certification.</p>
+      <p class="url">michaelwave369.github.io/parallax-369-public-primer/</p>
+    </footer>
+  </main>
+</body>
+</html>
