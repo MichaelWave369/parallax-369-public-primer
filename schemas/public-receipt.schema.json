@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://michaelwave369.github.io/parallax-369-public-primer/schemas/public-receipt.schema.json",
+  "title": "Parallax 3-6-9 Public Receipt Envelope",
+  "description": "A limited public-primer receipt envelope. Schema validity does not establish truth, safety, certification, or release authority.",
+  "type": "object",
+  "required": [
+    "schema_file",
+    "schema_version",
+    "receipt_type",
+    "receipt_id",
+    "project",
+    "stage",
+    "status",
+    "human_authority",
+    "scope",
+    "evidence",
+    "claims",
+    "limitations",
+    "created_at"
+  ],
+  "properties": {
+    "schema_file": {
+      "type": "string",
+      "const": "schemas/public-receipt.schema.json"
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "0.3"
+    },
+    "receipt_type": {
+      "type": "string",
+      "enum": [
+        "controlling-specification",
+        "implementation",
+        "proving-ground",
+        "decision",
+        "release-review"
+      ]
+    },
+    "receipt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stage": {
+      "type": "string",
+      "enum": ["3", "6", "9", "release"]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "candidate",
+        "implemented",
+        "simulated",
+        "mocked",
+        "deferred",
+        "failed",
+        "blocked",
+        "inconclusive",
+        "verified-in-scope",
+        "pending-human-decision",
+        "accepted",
+        "declined",
+        "superseded"
+      ]
+    },
+    "human_authority": {
+      "type": "object",
+      "required": ["role", "decision_status"],
+      "properties": {
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_status": {
+          "type": "string",
+          "enum": ["pending", "accepted", "declined", "conditional", "not-applicable"]
+        },
+        "decision": {
+          "type": "string"
+        }
+      }
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "observation", "result", "source"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": ["document", "test", "observation", "measurement", "simulation", "decision", "other"]
+          },
+          "observation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "result": {
+            "type": "string",
+            "enum": ["pass", "fail", "blocked", "inconclusive", "not-run", "informational"]
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["text", "classification", "evidence_ids"],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classification": {
+            "type": "string",
+            "enum": ["observed", "repeated", "verified-in-scope", "unsupported", "unknown"]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "scope_limit": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 10
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_file": "schemas/report-input.schema.json",
+  "schema_version": "0.3",
+  "project": "Pocket Beacon",
+  "candidate": "PB-CANDIDATE-0.1",
+  "controlling_specification": "Pocket Beacon synthetic public walkthrough",
+  "tester": "Public-primer synthetic reviewer",
+  "test_date": "2026-08-02",
+  "environment": {
+    "platform": "Desktop browser, offline after initial file load",
+    "configuration": "Static HTML, CSS, and JavaScript candidate",
+    "external_services": "None",
+    "safety_controls": "Educational synthetic example only"
+  },
+  "criteria": [
+    {
+      "id": "PG-01",
+      "criterion": "Display Ready, Busy, and Closed statuses.",
+      "method": "Open the local page and inspect the available controls.",
+      "result": "pass",
+      "observation": "All three declared statuses were present.",
+      "evidence": "Synthetic observation PB-OBS-01"
+    },
+    {
+      "id": "PG-02",
+      "criterion": "Operate without a network connection.",
+      "method": "Disable network access and change the displayed status.",
+      "result": "pass",
+      "observation": "Status selection continued to work offline.",
+      "evidence": "Synthetic observation PB-OBS-02"
+    },
+    {
+      "id": "PG-03",
+      "criterion": "Remain usable at a narrow mobile viewport.",
+      "method": "Inspect the candidate at a 390 CSS-pixel viewport.",
+      "result": "pass",
+      "observation": "Controls remained visible and selectable.",
+      "evidence": "Synthetic observation PB-OBS-03"
+    },
+    {
+      "id": "PG-04",
+      "criterion": "Retain the selected status after reload.",
+      "method": "Select Busy, reload the page, and inspect the displayed state.",
+      "result": "fail",
+      "observation": "The candidate returned to its default Ready status.",
+      "evidence": "Synthetic observation PB-OBS-04"
+    }
+  ],
+  "claims": [
+    {
+      "text": "The candidate displayed the declared statuses offline in the recorded environment.",
+      "classification": "verified-in-scope",
+      "scope_limit": "Limited to the synthetic candidate and recorded test conditions."
+    },
+    {
+      "text": "The candidate retains state across reloads.",
+      "classification": "unsupported",
+      "scope_limit": "The persistence criterion failed."
+    }
+  ],
+  "limitations": [
+    "Synthetic educational example; no real workshop deployment occurred.",
+    "No independent reproduction was performed.",
+    "The generated report requires a separate human release decision."
+  ]
+}

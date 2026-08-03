@@ -1,0 +1,33 @@
+{
+  "schema_file": "schemas/public-receipt.schema.json",
+  "schema_version": "0.3",
+  "receipt_type": "proving-ground",
+  "receipt_id": "INVALID-FIXTURE",
+  "project": "Intentional negative test",
+  "stage": "9",
+  "status": "verified-in-scope",
+  "human_authority": {
+    "role": "Fixture reviewer",
+    "decision_status": "pending"
+  },
+  "scope": "This file is intentionally invalid and must never be reported as a valid public receipt.",
+  "evidence": [
+    {
+      "id": "EV-REAL",
+      "kind": "test",
+      "observation": "A placeholder observation exists.",
+      "result": "pass",
+      "source": "Negative test fixture"
+    }
+  ],
+  "claims": [
+    {
+      "text": "This claim cites evidence that does not exist.",
+      "classification": "verified-in-scope",
+      "evidence_ids": ["EV-MISSING"],
+      "scope_limit": "The validator must reject this reference."
+    }
+  ],
+  "limitations": [],
+  "created_at": "2026-08-02"
+}

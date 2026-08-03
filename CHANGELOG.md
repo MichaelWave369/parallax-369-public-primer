@@ -6,9 +6,39 @@ All notable public changes to this repository will be recorded here.
 
 ### Planned
 
-- gather and classify public feedback submitted after the v0.2 release;
-- prepare v0.3 public validation helpers, subject to publication-boundary review;
-- conduct additional user and assistive-technology testing without overstating coverage.
+- gather, classify, and preserve public feedback after v0.2 and v0.3 publication;
+- run additional user and assistive-technology tests without overstating coverage;
+- revise the public roadmap only after evidence or clearly documented maintainer decisions justify new work.
+
+## [0.3.0-candidate] — 2026-08-02
+
+### Added
+
+- documented public validation-helper contract and claim boundaries;
+- lightweight public receipt and report-input schemas;
+- standard-library-only receipt validator with claim-to-evidence reference checks;
+- public template completeness checks tied to method boundaries;
+- local Markdown and HTML link checks plus static-site entry-point checks;
+- local-only Markdown proving-report generator that preserves supplied failures and leaves release authority pending;
+- unified local runner with Python syntax compilation and generator smoke testing;
+- synthetic machine-readable receipt and generator input examples;
+- read-only GitHub Actions workflow for pull requests and pushes to `main`;
+- GitHub Pages validation-helper guide;
+- v0.3 public-release review receipt.
+
+### Changed
+
+- README now documents the validation commands, limits, machine-readable examples, and authority boundary;
+- live site now identifies v0.3 and links to the validation-helper guide;
+- roadmap now links each completed v0.3 item to a public receipt and leaves future direction evidence-driven.
+
+### Validation boundary
+
+A passing helper or workflow result establishes only that the declared structural checks passed against the inspected public files. It does not authenticate evidence, establish truth, certify safety or accessibility, accept risk, or authorize merge, publication, deployment, release, or endorsement.
+
+### Public-boundary statement
+
+The v0.3 helpers and schemas were authored specifically for this public primer. They do not intentionally include or reconstruct private Parallax prompts, SkillSet logic, agent or swarm orchestration, canon, private validators or schemas, project records, conversations, credentials, connected-account data, or accumulated internal intelligence.
 
 ## [0.2.0-candidate] — 2026-08-02
 

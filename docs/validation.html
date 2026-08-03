@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Public, local-first validation helpers for the Parallax 3–6–9 Public Primer.">
+  <meta name="theme-color" content="#07111f">
+  <title>Public Validation Helpers · Parallax 3–6–9</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Parallax 3–6–9 home">
+      <span class="brand-mark" aria-hidden="true">369</span>
+      <span>Parallax Public Primer</span>
+    </a>
+    <nav aria-label="Validation navigation">
+      <a href="index.html">Home</a>
+      <a href="primer.html">Print Primer</a>
+      <a href="#checks">Checks</a>
+      <a href="#authority">Authority</a>
+    </nav>
+    <a class="header-button" href="https://github.com/MichaelWave369/parallax-369-public-primer">View repository</a>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="section-heading compact">
+        <p class="eyebrow">Public Candidate v0.3</p>
+        <h1>Checks that can block.<br>Never checks that can rule.</h1>
+        <p>The v0.3 helpers inspect public receipts, templates, local links, static-site files, and generated reports. They run locally with Python’s standard library and retain human release authority.</p>
+      </div>
+
+      <div class="truth-grid" id="checks">
+        <article><strong>Receipt shape</strong><span>Validate required identity, authority, evidence, claims, limitations, and status fields.</span></article>
+        <article><strong>Template contract</strong><span>Detect missing sections that preserve uncertainty, traceability, failure, dissent, and claim limits.</span></article>
+        <article><strong>Local site integrity</strong><span>Check local Markdown and HTML targets, fragments, entry points, and required assets without fetching the web.</span></article>
+        <article><strong>Report preservation</strong><span>Generate a Markdown draft while preserving failed tests and a pending human decision.</span></article>
+      </div>
+    </section>
+
+    <section class="section boundary-section" id="authority">
+      <div class="boundary-card">
+        <div>
+          <p class="eyebrow">Authority boundary</p>
+          <h2>A green check is not approval.</h2>
+          <p>The workflow has read-only repository permissions. It contains no merge, deployment, Pages, release, tagging, certification, or repository-write step.</p>
+          <a class="button secondary" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/VALIDATION.md">Read the validation guide</a>
+        </div>
+        <div class="boundary-columns">
+          <div class="boundary-list allowed">
+            <h3>Helpers may</h3>
+            <ul>
+              <li>return pass or failure;</li>
+              <li>name missing fields or files;</li>
+              <li>block a protected branch when configured by a human;</li>
+              <li>generate a local draft report.</li>
+            </ul>
+          </div>
+          <div class="boundary-list protected">
+            <h3>Helpers may not</h3>
+            <ul>
+              <li>authenticate evidence or declare truth;</li>
+              <li>approve risk or authorize release;</li>
+              <li>merge, publish, deploy, tag, or certify;</li>
+              <li>access private Parallax systems.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resources-section">
+      <div class="section-heading compact">
+        <p class="eyebrow">Run locally</p>
+        <h2>One command, explicit scope.</h2>
+        <p>From the repository root, run:</p>
+        <pre><code>python scripts/run_public_checks.py</code></pre>
+      </div>
+      <div class="resource-grid">
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/tree/main/scripts">
+          <span>Source</span><strong>Validation scripts</strong><small>Standard-library-only local checks and report generator.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/tree/main/schemas">
+          <span>Schema</span><strong>Public receipt envelope</strong><small>A deliberately limited, documented validation subset.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/tree/main/examples/receipts">
+          <span>Example</span><strong>Machine-readable receipt</strong><small>A synthetic proving receipt with a preserved failure.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/.github/workflows/public-validation.yml">
+          <span>CI gate</span><strong>Read-only workflow</strong><small>A status check that cannot publish or self-authorize.</small>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Parallax 3–6–9 Public Primer</strong> · Public validation helpers v0.3 candidate.</p>
+    <p>Structural checks do not constitute certification, truth validation, professional approval, or release authority.</p>
+  </footer>
+</body>
+</html>

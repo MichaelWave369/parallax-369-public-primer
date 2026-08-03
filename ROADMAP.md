@@ -34,13 +34,32 @@ The roadmap applies only to this independently authored public primer. It is not
 
 ## v0.3 — Public validation helpers
 
-Candidate work, subject to publication-boundary review:
+- [x] Add lightweight schema validation for public receipts.
+- [x] Add local broken-link and static-site checks.
+- [x] Add public template completeness checks.
+- [x] Add a local-only example report generator.
+- [x] Add public release-review automation that can block but never self-authorize publication.
 
-- [ ] lightweight schema validation for public receipts;
-- [ ] broken-link and static-site checks;
-- [ ] template completeness checks;
-- [ ] a local-only example report generator;
-- [ ] public release-review automation that can block but never self-authorize publication.
+### v0.3 receipts
+
+- [`VALIDATION.md`](VALIDATION.md)
+- [`schemas/README.md`](schemas/README.md)
+- [`schemas/public-receipt.schema.json`](schemas/public-receipt.schema.json)
+- [`schemas/report-input.schema.json`](schemas/report-input.schema.json)
+- [`scripts/`](scripts/)
+- [`examples/receipts/pocket-beacon-proving-receipt.json`](examples/receipts/pocket-beacon-proving-receipt.json)
+- [`examples/report-input/pocket-beacon.json`](examples/report-input/pocket-beacon.json)
+- [`.github/workflows/public-validation.yml`](.github/workflows/public-validation.yml)
+- [`docs/validation.html`](docs/validation.html)
+- [`releases/v0.3-public-release-review.md`](releases/v0.3-public-release-review.md)
+
+### v0.3 authority boundary
+
+The validation workflow may return a pass or failure and may be configured by a human administrator as a required status check. It has no authority or mechanism to merge, publish, deploy, tag, release, certify, or approve a change.
+
+## Post-v0.3 direction
+
+The next public roadmap revision should be informed by real usage and feedback rather than invented solely to continue version numbering. Candidate directions must remain subject to the public-release boundary and a human-controlled roadmap decision.
 
 ## Deferred
 
