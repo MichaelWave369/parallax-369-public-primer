@@ -22,6 +22,43 @@ def run(label: str, command: list[str]) -> bool:
     return True
 
 
+def invalid_receipt_smoke_test() -> bool:
+    print("\n== Invalid receipt rejection smoke test ==")
+    command = [
+        sys.executable,
+        str(SCRIPTS / "validate_receipts.py"),
+        "tests/fixtures/invalid-public-receipt.json",
+    ]
+    completed = subprocess.run(
+        command,
+        cwd=REPO_ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    combined = f"{completed.stdout}\n{completed.stderr}"
+    required_failures = [
+        "expected at least 1 items, got 0",
+        "unknown evidence id 'EV-MISSING'",
+    ]
+
+    if completed.returncode == 0:
+        print("FAIL: intentionally invalid receipt was accepted", file=sys.stderr)
+        return False
+    missing = [phrase for phrase in required_failures if phrase not in combined]
+    if missing:
+        for phrase in missing:
+            print(
+                f"FAIL invalid-receipt smoke test: missing expected diagnostic {phrase!r}",
+                file=sys.stderr,
+            )
+        print(combined, file=sys.stderr)
+        return False
+
+    print("PASS: invalid receipt was rejected for both structural and evidence-reference errors")
+    return True
+
+
 def generator_smoke_test() -> bool:
     print("\n== Local report generator smoke test ==")
     with tempfile.TemporaryDirectory(prefix="parallax-public-") as temp_dir:
@@ -88,6 +125,8 @@ def main() -> int:
         if not run(label, command):
             passed = False
 
+    if not invalid_receipt_smoke_test():
+        passed = False
     if not generator_smoke_test():
         passed = False
 
