@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://michaelwave369.github.io/parallax-369-public-primer/schemas/review-bundle.schema.json",
+  "title": "Parallax 3-6-9 Public Review Bundle",
+  "description": "Structural manifest for locally reviewing multiple public field-trial receipts from one project. Validation does not authenticate evidence or authorize a decision.",
+  "type": "object",
+  "required": [
+    "bundle_version",
+    "bundle_id",
+    "primer_version",
+    "project_key",
+    "project_label",
+    "human_authority",
+    "receipts",
+    "review_questions",
+    "rules",
+    "known_limits",
+    "review_status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "bundle_version": {
+      "const": "0.5"
+    },
+    "bundle_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "primer_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "human_authority": {
+      "type": "string",
+      "minLength": 1
+    },
+    "receipts": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["receipt_file", "declared_trial_id", "inclusion_reason"],
+        "additionalProperties": false,
+        "properties": {
+          "receipt_file": {
+            "type": "string",
+            "minLength": 1
+          },
+          "declared_trial_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "inclusion_reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "review_questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "rules": {
+      "type": "object",
+      "required": [
+        "same_project_required",
+        "preserve_each_trial",
+        "no_scoring",
+        "no_majority_truth",
+        "no_automatic_decision"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "same_project_required": {"const": true},
+        "preserve_each_trial": {"const": true},
+        "no_scoring": {"const": true},
+        "no_majority_truth": {"const": true},
+        "no_automatic_decision": {"const": true}
+      }
+    },
+    "known_limits": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["Draft", "Human review pending", "Reviewed in scope", "Superseded"]
+    }
+  }
+}
