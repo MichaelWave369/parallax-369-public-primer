@@ -23,13 +23,18 @@
   "additionalProperties": false,
   "properties": {
     "receipt_version": {
-      "const": "0.4"
+      "type": "string",
+      "enum": ["0.4", "0.5"]
     },
     "trial_id": {
       "type": "string",
       "minLength": 1
     },
     "primer_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_key": {
       "type": "string",
       "minLength": 1
     },
@@ -50,6 +55,17 @@
         "could_stop": {"const": true},
         "no_sensitive_material": {"const": true},
         "minimal_data": {"const": true}
+      }
+    },
+    "conditions": {
+      "type": "object",
+      "required": ["interaction_mode", "platform", "facilitation", "notes"],
+      "additionalProperties": false,
+      "properties": {
+        "interaction_mode": {"type": "string", "minLength": 1},
+        "platform": {"type": "string", "minLength": 1},
+        "facilitation": {"type": "string", "minLength": 1},
+        "notes": {"type": "string", "minLength": 1}
       }
     },
     "task": {

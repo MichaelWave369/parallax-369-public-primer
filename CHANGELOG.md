@@ -6,9 +6,43 @@ All notable public changes to this repository will be recorded here.
 
 ### Planned
 
-- gather and classify real public feedback and field-trial observations;
+- gather and classify real public feedback, field-trial observations, and evidence-review experience;
 - run additional user and assistive-technology tests without overstating coverage;
 - revise the public roadmap only after evidence or a clearly documented maintainer decision justifies new work.
+
+## [0.5.0-candidate] — 2026-08-02
+
+### Added
+
+- public evidence-review protocol for multiple same-project field-trial receipts;
+- evidence-review receipt template preserving compatibility limits, divergence, dissent, and human decision authority;
+- machine-readable review-bundle schema with explicit no-score, no-majority-truth, and no-automatic-decision rules;
+- standard-library-only review-bundle validator;
+- local review-packet generator with safe overwrite refusal;
+- second synthetic Pocket Beacon field-trial receipt under different declared conditions;
+- synthetic Pocket Beacon review bundle and human-readable packet preserving conflicting outcomes;
+- negative fixtures proving cross-project bundles and missing source files are rejected;
+- GitHub Pages evidence-review guide;
+- v0.5 roadmap proposal issue and public-release review receipt.
+
+### Changed
+
+- field-trial schema now accepts compatible receipt versions `0.4` and `0.5` plus optional `project_key` and `conditions` fields;
+- existing synthetic Pocket Beacon trial now declares its project key and conditions for review compatibility;
+- unified validation runner now validates review bundles and tests review-packet generation, divergence preservation, no-score language, pending authority, and overwrite refusal;
+- template checks now cover six public template contracts;
+- local static-site checks now require the evidence-review page;
+- README, field-trial protocol, schema guide, validation guide, roadmap, and landing page now surface v0.5.
+
+### Synthesis boundary
+
+The review tools inventory declared outcomes and expose agreement or divergence. They do not authenticate receipts, calculate usability or confidence scores, average incompatible conditions, resolve disagreement by majority vote, recommend release, certify a project, or authorize a roadmap change.
+
+The included receipts, bundle, and packet are synthetic. They do not establish real participant experience, representative usability, accessibility, or controlled replication.
+
+### Public-boundary statement
+
+The v0.5 protocol, schema, validator, generator, fixtures, and examples were authored specifically for this public primer. They do not intentionally include or reconstruct private Parallax prompts, SkillSet logic, agent or swarm orchestration, canon, private validators or schemas, project records, conversations, credentials, connected-account data, or accumulated internal intelligence.
 
 ## [0.4.0-candidate] — 2026-08-02
 
@@ -29,10 +63,10 @@ All notable public changes to this repository will be recorded here.
 
 ### Changed
 
-- unified validation runner now checks public projects, field-trial receipts, scaffold creation, authority preservation, no-network declaration, and overwrite refusal;
-- template completeness checks now include the field-trial receipt contract;
-- schema and validation documentation now covers project manifests and field-trial limitations;
-- README and live site now identify v0.4 and surface the adoption kit;
+- unified validation runner checks public projects, field-trial receipts, scaffold creation, authority preservation, no-network declaration, and overwrite refusal;
+- template completeness checks include the field-trial receipt contract;
+- schema and validation documentation covers project manifests and field-trial limitations;
+- README and live site identify v0.4 and surface the adoption kit;
 - roadmap records that no real feedback issue existed at planning time and keeps real feedback gathering open.
 
 ### Adoption boundary
@@ -40,10 +74,6 @@ All notable public changes to this repository will be recorded here.
 The scaffolder creates a local folder from public templates. It does not upload content, authenticate evidence, establish project quality, validate consent, certify usability, or authorize release.
 
 The included field trial is synthetic. It does not establish real participant experience or complete the ongoing public-feedback roadmap item.
-
-### Public-boundary statement
-
-The v0.4 starter, schemas, validators, fixtures, and trial protocol were authored specifically for this public primer. They do not intentionally include or reconstruct private Parallax prompts, SkillSet logic, agent or swarm orchestration, canon, private validators or schemas, project records, conversations, credentials, connected-account data, or accumulated internal intelligence.
 
 ## [0.3.0-candidate] — 2026-08-02
 
@@ -60,12 +90,6 @@ The v0.4 starter, schemas, validators, fixtures, and trial protocol were authore
 - read-only GitHub Actions workflow for pull requests and pushes to `main`;
 - GitHub Pages validation-helper guide;
 - v0.3 public-release review receipt.
-
-### Changed
-
-- README documents validation commands, limits, machine-readable examples, and the authority boundary;
-- live site identifies v0.3 and links to the validation-helper guide;
-- roadmap links each completed v0.3 item to a public receipt and leaves future direction evidence-driven.
 
 ### Validation boundary
 

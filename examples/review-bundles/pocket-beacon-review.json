@@ -1,0 +1,38 @@
+{
+  "bundle_version": "0.5",
+  "bundle_id": "RB-PB-001",
+  "primer_version": "0.5.0-candidate",
+  "project_key": "pocket-beacon",
+  "project_label": "Pocket Beacon",
+  "human_authority": "Repository maintainer",
+  "receipts": [
+    {
+      "receipt_file": "examples/field-trials/pocket-beacon-first-use.json",
+      "declared_trial_id": "FT-PB-001",
+      "inclusion_reason": "Synthetic first-use receipt showing partial completion and initial validator-boundary confusion."
+    },
+    {
+      "receipt_file": "examples/field-trials/pocket-beacon-keyboard-only.json",
+      "declared_trial_id": "FT-PB-002",
+      "inclusion_reason": "Synthetic keyboard-only receipt showing completion and a different human-authority ambiguity."
+    }
+  ],
+  "review_questions": [
+    "Which method boundaries were clear in both receipts?",
+    "Which misunderstandings differ across the declared conditions?",
+    "What additional evidence would be needed before changing the quickstart or authority language?"
+  ],
+  "rules": {
+    "same_project_required": true,
+    "preserve_each_trial": true,
+    "no_scoring": true,
+    "no_majority_truth": true,
+    "no_automatic_decision": true
+  },
+  "known_limits": [
+    "Both receipts are synthetic and do not constitute real user research.",
+    "The trials use different interaction, facilitation, and time conditions and are not controlled replications.",
+    "Two receipts cannot establish representative usability or accessibility."
+  ],
+  "review_status": "Human review pending"
+}

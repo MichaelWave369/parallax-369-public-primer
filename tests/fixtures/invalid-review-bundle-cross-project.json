@@ -1,0 +1,34 @@
+{
+  "bundle_version": "0.5",
+  "bundle_id": "RB-INVALID-CROSS",
+  "primer_version": "0.5.0-candidate",
+  "project_key": "pocket-beacon",
+  "project_label": "Pocket Beacon",
+  "human_authority": "Repository maintainer",
+  "receipts": [
+    {
+      "receipt_file": "examples/field-trials/pocket-beacon-first-use.json",
+      "declared_trial_id": "FT-PB-001",
+      "inclusion_reason": "Valid same-project source."
+    },
+    {
+      "receipt_file": "tests/fixtures/field-trial-other-project.json",
+      "declared_trial_id": "FT-TS-TEST",
+      "inclusion_reason": "Intentional cross-project source that must be rejected."
+    }
+  ],
+  "review_questions": [
+    "This bundle is expected to fail validation."
+  ],
+  "rules": {
+    "same_project_required": true,
+    "preserve_each_trial": true,
+    "no_scoring": true,
+    "no_majority_truth": true,
+    "no_automatic_decision": true
+  },
+  "known_limits": [
+    "Intentional negative fixture."
+  ],
+  "review_status": "Draft"
+}

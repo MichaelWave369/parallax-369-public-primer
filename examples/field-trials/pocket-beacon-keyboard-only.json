@@ -1,0 +1,50 @@
+{
+  "receipt_version": "0.5",
+  "trial_id": "FT-PB-002",
+  "primer_version": "0.5.0-candidate",
+  "project_key": "pocket-beacon",
+  "project_type": "Fictional",
+  "participant_count": 1,
+  "consent": {
+    "voluntary": true,
+    "could_stop": true,
+    "no_sensitive_material": true,
+    "minimal_data": true
+  },
+  "conditions": {
+    "interaction_mode": "Keyboard only",
+    "platform": "Desktop browser and local terminal",
+    "facilitation": "No live assistance",
+    "notes": "Synthetic accessibility-oriented walkthrough using the public quickstart and validation guide."
+  },
+  "task": "Create the fictional Pocket Beacon scaffold without pointer input, run the public checks, and explain who may authorize a release.",
+  "completion": "Completed",
+  "time_band": "31-60 minutes",
+  "help_needed": "None",
+  "understanding": {
+    "stage_separation": "Clear",
+    "human_authority": "Partly clear",
+    "validator_boundary": "Clear"
+  },
+  "observations": [
+    {
+      "id": "FT-OBS-03",
+      "observation": "The participant completed the local scaffold and validation sequence without pointer input in the synthetic scenario.",
+      "identifying_content_removed": true
+    },
+    {
+      "id": "FT-OBS-04",
+      "observation": "The participant understood that validation could block a change but initially described the repository maintainer and project authority as the same role.",
+      "identifying_content_removed": true
+    }
+  ],
+  "evidence_limits": [
+    "Synthetic receipt rather than observed research with a real participant.",
+    "Keyboard-only completion does not establish screen-reader usability, cognitive accessibility, or compatibility across operating systems.",
+    "Different facilitation and time conditions prevent controlled comparison with FT-PB-001."
+  ],
+  "maintainer_decision": {
+    "status": "Pending",
+    "authority": "Repository maintainer"
+  }
+}

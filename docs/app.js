@@ -4,14 +4,12 @@
 
   const activate = (tab) => {
     const stage = tab.dataset.stage;
-
     tabs.forEach((item) => {
       const selected = item === tab;
       item.classList.toggle('active', selected);
       item.setAttribute('aria-selected', String(selected));
       item.tabIndex = selected ? 0 : -1;
     });
-
     panels.forEach((panel) => {
       const selected = panel.id === `panel-${stage}`;
       panel.classList.toggle('active', selected);
@@ -22,18 +20,14 @@
   if (tabs.length && panels.length) {
     tabs.forEach((tab, index) => {
       tab.addEventListener('click', () => activate(tab));
-
       tab.addEventListener('keydown', (event) => {
         if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-
         event.preventDefault();
         let nextIndex = index;
-
         if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
         if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
         if (event.key === 'Home') nextIndex = 0;
         if (event.key === 'End') nextIndex = tabs.length - 1;
-
         activate(tabs[nextIndex]);
         tabs[nextIndex].focus();
       });
@@ -41,16 +35,16 @@
   }
 
   const versionLabel = document.querySelector('.hero .eyebrow');
-  if (versionLabel) versionLabel.textContent = 'Public Candidate v0.4';
+  if (versionLabel) versionLabel.textContent = 'Public Candidate v0.5';
 
   const nav = document.querySelector('.site-header nav');
   if (nav) {
     const navItems = [
       { id: 'quickstart', href: 'quickstart.html', label: 'Quickstart' },
+      { id: 'review', href: 'review.html', label: 'Evidence Review' },
       { id: 'print-primer', href: 'primer.html', label: 'Print Primer' },
       { id: 'validation', href: 'validation.html', label: 'Validation' }
     ];
-
     navItems.forEach((item) => {
       if (nav.querySelector(`[data-nav-id="${item.id}"]`)) return;
       const link = document.createElement('a');
@@ -64,6 +58,13 @@
   const resourceGrid = document.querySelector('.resource-grid');
   if (resourceGrid) {
     const resources = [
+      {
+        id: 'review',
+        href: 'review.html',
+        label: 'v0.5 synthesis',
+        title: 'Evidence review kit',
+        detail: 'Combine same-project trial receipts locally while preserving conditions, failures, disagreement, and human authority.'
+      },
       {
         id: 'quickstart',
         href: 'quickstart.html',
@@ -128,23 +129,17 @@
         detail: 'Voluntary, minimal, non-sensitive observations that can inform a later human decision.'
       }
     ];
-
     resources.forEach((resource) => {
       if (resourceGrid.querySelector(`[data-resource-id="${resource.id}"]`)) return;
-
       const link = document.createElement('a');
       link.href = resource.href;
       link.dataset.resourceId = resource.id;
-
       const label = document.createElement('span');
       label.textContent = resource.label;
-
       const title = document.createElement('strong');
       title.textContent = resource.title;
-
       const detail = document.createElement('small');
       detail.textContent = resource.detail;
-
       link.append(label, title, detail);
       resourceGrid.append(link);
     });

@@ -129,3 +129,33 @@ A material question for which the current artifact does not have a supported ans
 ## Validation
 
 An evaluation against declared criteria. Validation is always scoped; passing one validation does not establish universal correctness.
+
+## v0.5 evidence-review terms
+
+### Condition record
+
+A short, non-identifying description of the interaction mode, platform, facilitation, and other context that may affect a field-trial result. Matching project keys do not make different condition records equivalent.
+
+### Evidence-review packet
+
+A human-readable synthesis that inventories declared outcomes, agreement, divergence, source observations, and limitations from multiple receipts. It does not replace the source receipts or authorize a decision.
+
+### Field-trial receipt
+
+A record of a voluntary, non-sensitive public-primer trial. It preserves declared conditions, observations, limitations, and a maintainer-decision status without authenticating that the trial occurred.
+
+### Majority-truth claim
+
+The invalid inference that the most common declared result in a small or incompatible evidence set becomes true merely because it appears more often.
+
+### Project key
+
+A stable, non-sensitive identifier used to state that field-trial receipts concern the same project. It does not establish equivalent versions, participants, environments, or conditions.
+
+### Review bundle
+
+A machine-readable manifest naming two or more validated field-trial receipts for one declared project, the human authority, review questions, known limits, and rules that prohibit scoring and automatic decisions.
+
+### Synthesis
+
+The organization of multiple source receipts into a reviewable packet. Synthesis may expose patterns and conflict; it does not create stronger evidence simply by combining files.

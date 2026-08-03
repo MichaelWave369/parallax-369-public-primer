@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Local-first evidence review and synthesis for the Parallax 3–6–9 Public Primer.">
+  <meta name="theme-color" content="#07111f">
+  <title>Evidence Review · Parallax 3–6–9</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Parallax 3–6–9 home">
+      <span class="brand-mark" aria-hidden="true">369</span>
+      <span>Parallax Public Primer</span>
+    </a>
+    <nav aria-label="Evidence review navigation">
+      <a href="index.html">Home</a>
+      <a href="quickstart.html">Quickstart</a>
+      <a href="validation.html">Validation</a>
+      <a href="#process">Process</a>
+      <a href="#boundary">Boundary</a>
+    </nav>
+    <a class="header-button" href="https://github.com/MichaelWave369/parallax-369-public-primer">View repository</a>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="section-heading compact">
+        <p class="eyebrow">Public Candidate v0.5</p>
+        <h1>Review together.<br>Never flatten the evidence.</h1>
+        <p>The v0.5 kit combines multiple local field-trial receipts from one declared project into a review packet that preserves conditions, failures, observations, limitations, and disagreement.</p>
+      </div>
+
+      <div class="truth-grid" id="process">
+        <article><strong>One project</strong><span>Every source receipt must declare the same project key. Cross-project bundles are rejected.</span></article>
+        <article><strong>Every receipt survives</strong><span>The packet links each source and preserves its trial ID, conditions, outcomes, observations, limits, and pending decision.</span></article>
+        <article><strong>Agreement and divergence</strong><span>Shared values and conflicting values are surfaced separately without voting one into truth.</span></article>
+        <article><strong>Human interpretation</strong><span>The generator leaves actions and decisions pending for a named human authority.</span></article>
+      </div>
+    </section>
+
+    <section class="section boundary-section" id="boundary">
+      <div class="boundary-card">
+        <div>
+          <p class="eyebrow">No synthetic authority</p>
+          <h2>Counts are inventory—not a score.</h2>
+          <p>The review packet may count declared outcomes so a reviewer can see the evidence set. It does not calculate confidence, rank trials, average incompatible conditions, recommend release, or certify a project.</p>
+          <a class="button secondary" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/EVIDENCE_REVIEW.md">Read the full protocol</a>
+        </div>
+        <div class="boundary-columns">
+          <div class="boundary-list allowed">
+            <h3>The kit may</h3>
+            <ul>
+              <li>validate bundle structure;</li>
+              <li>reject missing or cross-project sources;</li>
+              <li>inventory declared outcomes;</li>
+              <li>surface agreement and divergence;</li>
+              <li>generate a local draft packet.</li>
+            </ul>
+          </div>
+          <div class="boundary-list protected">
+            <h3>The kit may not</h3>
+            <ul>
+              <li>authenticate trials or consent;</li>
+              <li>erase incompatible conditions;</li>
+              <li>score, rank, or vote truth;</li>
+              <li>recommend or authorize release;</li>
+              <li>access private Parallax systems.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resources-section">
+      <div class="section-heading compact">
+        <p class="eyebrow">Run locally</p>
+        <h2>Validate, then generate.</h2>
+        <pre><code>python scripts/validate_review_bundles.py
+python scripts/generate_review_packet.py \
+  examples/review-bundles/pocket-beacon-review.json \
+  --output /tmp/pocket-beacon-review.md</code></pre>
+      </div>
+      <div class="resource-grid">
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/EVIDENCE_REVIEW.md">
+          <span>Protocol</span><strong>Evidence review guide</strong><small>Same-project scope, source preservation, divergence, privacy, and human authority.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/templates/evidence-review-receipt.md">
+          <span>Template</span><strong>Review receipt</strong><small>A human-readable packet structure with dissent and claim boundaries.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/examples/review-bundles/pocket-beacon-review.json">
+          <span>Bundle</span><strong>Synthetic source manifest</strong><small>Two fictional trials of one project under different declared conditions.</small>
+        </a>
+        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/examples/review-packets/pocket-beacon-review.md">
+          <span>Packet</span><strong>Preserved disagreement</strong><small>A synthetic review packet with no score and a pending human decision.</small>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Parallax 3–6–9 Public Primer</strong> · Evidence review and synthesis v0.5 candidate.</p>
+    <p>Combining receipts does not strengthen, authenticate, certify, or authorize their claims.</p>
+  </footer>
+</body>
+</html>
