@@ -2,6 +2,7 @@
   "receipt_version": "0.4",
   "trial_id": "FT-PB-001",
   "primer_version": "0.4.0-candidate",
+  "project_key": "pocket-beacon",
   "project_type": "Fictional",
   "participant_count": 1,
   "consent": {
@@ -9,6 +10,12 @@
     "could_stop": true,
     "no_sensitive_material": true,
     "minimal_data": true
+  },
+  "conditions": {
+    "interaction_mode": "Keyboard and pointer",
+    "platform": "Desktop browser and local terminal",
+    "facilitation": "Quick clarification available",
+    "notes": "Synthetic first-use scenario using the public quickstart and local scaffold."
   },
   "task": "Use the quickstart to create a fictional Pocket Beacon project and explain what each stage and validator can establish.",
   "completion": "Partial",
