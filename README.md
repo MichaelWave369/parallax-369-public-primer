@@ -1,6 +1,6 @@
 # Parallax 3–6–9 Public Primer
 
-> **Public Candidate v0.2** — A human-led method for moving from idea, to implementation, to evidence.
+> **Public Candidate v0.3** — A human-led method for moving from idea, to implementation, to evidence.
 
 The Parallax 3–6–9 Method separates three activities that are often blurred together:
 
@@ -30,6 +30,7 @@ Humans retain authority over scope, risk, acceptance, publication, and release.
 
 - [Live public site](https://michaelwave369.github.io/parallax-369-public-primer/)
 - [One-page printable primer](https://michaelwave369.github.io/parallax-369-public-primer/primer.html)
+- [Public validation helpers](https://michaelwave369.github.io/parallax-369-public-primer/validation.html)
 - [Stage 3 — Specify](method/03-specify.md)
 - [Stage 6 — Build](method/06-build.md)
 - [Stage 9 — Prove](method/09-prove.md)
@@ -48,8 +49,30 @@ Humans retain authority over scope, risk, acceptance, publication, and release.
 - [Pocket Beacon — software walkthrough](examples/pocket-beacon/README.md)
 - [Community Seed-Swap Station — non-software walkthrough](examples/seed-swap-station/README.md)
 - [Filled decision receipt](examples/decision-receipt-example.md)
+- [Machine-readable proving receipt](examples/receipts/pocket-beacon-proving-receipt.json)
+- [Local report-generator input](examples/report-input/pocket-beacon.json)
 
 The examples are fictional. They teach traceability and scoped evidence; they are not product validation or field proof.
+
+## v0.3 public validation helpers
+
+Version 0.3 adds local-first structural checks without adding autonomous authority:
+
+- [Validation guide and claim boundaries](VALIDATION.md)
+- [Public receipt schemas](schemas/README.md)
+- [Validation scripts](scripts/)
+- [Read-only GitHub Actions gate](.github/workflows/public-validation.yml)
+- [v0.3 public-release review](releases/v0.3-public-release-review.md)
+
+Run every public check from the repository root:
+
+```bash
+python scripts/run_public_checks.py
+```
+
+The helpers validate public receipt shape, required template sections, local links, static-site entry points, and deterministic report generation. A passing result is limited to those declared structural checks. It is not certification, evidence authentication, risk acceptance, or release approval.
+
+The GitHub workflow can report a blocking failure when branch protection is configured by a human administrator. It has read-only repository permissions and no merge, publication, deployment, tagging, release, or certification step.
 
 ## v0.2 usability and review kit
 
@@ -86,6 +109,8 @@ The primer prohibits substitutions such as:
 - a specification for a working implementation;
 - a simulation or mock for field evidence;
 - a passing test for universal truth;
+- schema validity for evidence authenticity;
+- a green workflow for human approval;
 - model confidence for independent evidence;
 - repository inclusion for Parallax certification.
 
@@ -99,7 +124,7 @@ Use explicit labels where applicable:
 
 The public method is not tied to a particular model, company, programming language, project-management platform, or deployment service. A person or team can use the templates manually or adapt them to their own accountable workflow.
 
-Downstream projects should read [COMPATIBILITY_AND_VERSIONING.md](COMPATIBILITY_AND_VERSIONING.md) before describing themselves as compatible with the public primer.
+The optional v0.3 helpers use Python 3.11 or newer and only the Python standard library. Downstream projects should read [COMPATIBILITY_AND_VERSIONING.md](COMPATIBILITY_AND_VERSIONING.md) before describing themselves as compatible with the public primer.
 
 ## Contributing and feedback
 
