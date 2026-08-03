@@ -18,7 +18,8 @@
     </a>
     <nav aria-label="Validation navigation">
       <a href="index.html">Home</a>
-      <a href="primer.html">Print Primer</a>
+      <a href="quickstart.html">Quickstart</a>
+      <a href="review.html">Evidence Review</a>
       <a href="#checks">Checks</a>
       <a href="#authority">Authority</a>
     </nav>
@@ -28,16 +29,18 @@
   <main id="main">
     <section class="section">
       <div class="section-heading compact">
-        <p class="eyebrow">Public Candidate v0.3</p>
+        <p class="eyebrow">Public Candidate v0.5</p>
         <h1>Checks that can block.<br>Never checks that can rule.</h1>
-        <p>The v0.3 helpers inspect public receipts, templates, local links, static-site files, and generated reports. They run locally with Python’s standard library and retain human release authority.</p>
+        <p>The public helpers inspect receipts, local project scaffolds, field trials, review bundles, templates, links, static pages, and generated reports. They use Python’s standard library and retain human authority.</p>
       </div>
 
       <div class="truth-grid" id="checks">
-        <article><strong>Receipt shape</strong><span>Validate required identity, authority, evidence, claims, limitations, and status fields.</span></article>
-        <article><strong>Template contract</strong><span>Detect missing sections that preserve uncertainty, traceability, failure, dissent, and claim limits.</span></article>
-        <article><strong>Local site integrity</strong><span>Check local Markdown and HTML targets, fragments, entry points, and required assets without fetching the web.</span></article>
-        <article><strong>Report preservation</strong><span>Generate a Markdown draft while preserving failed tests and a pending human decision.</span></article>
+        <article><strong>Receipt and project shape</strong><span>Validate required identity, authority, stage separation, evidence, limitations, privacy declarations, and artifact paths.</span></article>
+        <article><strong>Field trials</strong><span>Check consent declarations, observation structure, project keys, conditions, evidence limits, and pending maintainer decisions.</span></article>
+        <article><strong>Review bundles</strong><span>Reject missing files, duplicate sources, trial-ID mismatches, invalid receipts, and cross-project synthesis.</span></article>
+        <article><strong>Template and site integrity</strong><span>Check six public template contracts plus local Markdown, HTML, fragments, entry points, and assets.</span></article>
+        <article><strong>Report preservation</strong><span>Generate proving reports while preserving supplied failures and pending human authority.</span></article>
+        <article><strong>Synthesis preservation</strong><span>Generate review packets that retain both trials, conditions, observations, limitations, divergence, no-score language, and a pending decision.</span></article>
       </div>
     </section>
 
@@ -46,7 +49,7 @@
         <div>
           <p class="eyebrow">Authority boundary</p>
           <h2>A green check is not approval.</h2>
-          <p>The workflow has read-only repository permissions. It contains no merge, deployment, Pages, release, tagging, certification, or repository-write step.</p>
+          <p>The workflow has read-only repository permissions. It contains no merge, deployment, Pages, release, tagging, certification, roadmap, or repository-write step.</p>
           <a class="button secondary" href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/VALIDATION.md">Read the validation guide</a>
         </div>
         <div class="boundary-columns">
@@ -54,17 +57,19 @@
             <h3>Helpers may</h3>
             <ul>
               <li>return pass or failure;</li>
-              <li>name missing fields or files;</li>
+              <li>name missing fields, files, or references;</li>
+              <li>reject cross-project review bundles;</li>
               <li>block a protected branch when configured by a human;</li>
-              <li>generate a local draft report.</li>
+              <li>generate local draft reports and packets.</li>
             </ul>
           </div>
           <div class="boundary-list protected">
             <h3>Helpers may not</h3>
             <ul>
-              <li>authenticate evidence or declare truth;</li>
+              <li>authenticate evidence or consent;</li>
+              <li>score, rank, average, or vote truth;</li>
               <li>approve risk or authorize release;</li>
-              <li>merge, publish, deploy, tag, or certify;</li>
+              <li>merge, publish, deploy, tag, certify, or change the roadmap;</li>
               <li>access private Parallax systems.</li>
             </ul>
           </div>
@@ -76,18 +81,17 @@
       <div class="section-heading compact">
         <p class="eyebrow">Run locally</p>
         <h2>One command, explicit scope.</h2>
-        <p>From the repository root, run:</p>
         <pre><code>python scripts/run_public_checks.py</code></pre>
       </div>
       <div class="resource-grid">
         <a href="https://github.com/MichaelWave369/parallax-369-public-primer/tree/main/scripts">
-          <span>Source</span><strong>Validation scripts</strong><small>Standard-library-only local checks and report generator.</small>
+          <span>Source</span><strong>Validation scripts</strong><small>Standard-library-only local checks, scaffolders, and generators.</small>
         </a>
         <a href="https://github.com/MichaelWave369/parallax-369-public-primer/tree/main/schemas">
-          <span>Schema</span><strong>Public receipt envelope</strong><small>A deliberately limited, documented validation subset.</small>
+          <span>Schema</span><strong>Public structures</strong><small>A deliberately limited, documented validation subset.</small>
         </a>
-        <a href="https://github.com/MichaelWave369/parallax-369-public-primer/tree/main/examples/receipts">
-          <span>Example</span><strong>Machine-readable receipt</strong><small>A synthetic proving receipt with a preserved failure.</small>
+        <a href="review.html">
+          <span>v0.5</span><strong>Evidence review boundary</strong><small>Same-project synthesis with no score and no automated decision.</small>
         </a>
         <a href="https://github.com/MichaelWave369/parallax-369-public-primer/blob/main/.github/workflows/public-validation.yml">
           <span>CI gate</span><strong>Read-only workflow</strong><small>A status check that cannot publish or self-authorize.</small>
@@ -97,8 +101,8 @@
   </main>
 
   <footer>
-    <p><strong>Parallax 3–6–9 Public Primer</strong> · Public validation helpers v0.3 candidate.</p>
-    <p>Structural checks do not constitute certification, truth validation, professional approval, or release authority.</p>
+    <p><strong>Parallax 3–6–9 Public Primer</strong> · Public validation helpers through v0.5 candidate.</p>
+    <p>Structural checks do not constitute certification, evidence authentication, statistical validation, professional approval, or release authority.</p>
   </footer>
 </body>
 </html>
