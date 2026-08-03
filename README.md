@@ -56,6 +56,7 @@ The examples are fictional. They teach traceability and scoped evidence; they ar
 - [Accessibility review receipt](ACCESSIBILITY_REVIEW_v0.2.md)
 - [Public feedback guide](FEEDBACK.md)
 - [Compatibility and versioning rules](COMPATIBILITY_AND_VERSIONING.md)
+- [v0.2 public-release review](releases/v0.2-public-release-review.md)
 - [Roadmap](ROADMAP.md)
 - [Changelog](CHANGELOG.md)
 
