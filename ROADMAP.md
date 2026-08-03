@@ -30,6 +30,7 @@ The roadmap applies only to this independently authored public primer. It is not
 - [`examples/decision-receipt-example.md`](examples/decision-receipt-example.md)
 - [`examples/seed-swap-station/README.md`](examples/seed-swap-station/README.md)
 - [`COMPATIBILITY_AND_VERSIONING.md`](COMPATIBILITY_AND_VERSIONING.md)
+- [`releases/v0.2-public-release-review.md`](releases/v0.2-public-release-review.md)
 
 ## v0.3 — Public validation helpers
 
